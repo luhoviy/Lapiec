@@ -1,0 +1,81 @@
+<div class="container col">
+  <ng-template #template>
+    <div class="modal-header bg-dark">
+      <h3 *ngIf="!editStatus" class="modal-title text-success pull-left">New product</h3>
+      <h3 *ngIf="editStatus" class="modal-title text-warning pull-left">Edit product</h3>
+    </div>
+    <div class="modal-body col container-fluid newProductModal">
+      <form class="">
+        <div class="form-group col row">
+          <label class="col-3" for="categorySelect">Select category:</label>
+          <select class="form-control col-9" id="categorySelect"  [(ngModel)]="categoryName" (change)="setCategoryID()" name="categorySelect">
+            <option [selected] = "categoryName === item.categoryName" *ngFor="let item of categories;">{{item.categoryName | titlecase}}</option>
+          </select>
+        </div>
+        <div class="form-group col row">
+          <label class="col-3" for="productName">Product name:</label>
+          <input type="text" [(ngModel)]="name" name="name" class="form-control col-9" id="productName" placeholder="Product name">
+        </div>
+        <div class="form-group col row">
+          <label class="col-3" for="productDescription">Product description:</label>
+          <textarea [(ngModel)]="productDescription" name="productDescription" class="form-control col-9" id="productDescription" placeholder="Product description"></textarea>
+        </div>
+        <div class="form-group col row">
+          <label class="col-3" for="productWeight">Product weight:</label>
+          <input type="number" [(ngModel)]="productWeight" name="productWeight" class="form-control col-9" id="productWeight" placeholder="Product weight">
+        </div>
+        <div class="form-group col row">
+          <label class="col-3" for="productPrice">Product price:</label>
+          <input type="number" [(ngModel)]="productPrice" name="productPrice" class="form-control col-9" id="productPrice" placeholder="Product price">
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="resetForm(); modalRef.hide(); ">Close</button>
+      <button type="button" *ngIf="!editStatus" class="btn btn-dark" [disabled] ="categoryName && productDescription && productWeight && productPrice && name ? false : true" (click)="modalRef.hide();addProduct();">Add</button>
+      <button type="button" *ngIf="editStatus" class="btn btn-dark" [disabled] ="categoryName && productDescription && productWeight && productPrice && name ? false : true" (click)="addProduct();modalRef.hide();">Save edit</button>
+
+    </div>
+  </ng-template>
+      
+      <div class="card">
+        <div class="card-header d-flex justify-content-between">
+  <h5>Products</h5>
+  <button type="button" class="btn btn-dark col-2"  (click)="editStatus = false; openModalWithClass(template)">Add</button>
+</div>
+
+    <div class="card-body">
+      <input type="text" [(ngModel)]="searchProduct" name="searchProduct" class="form-control" placeholder="Filter products...">
+      <table class="table table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Category</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Weight</th>
+            <th scope="col">Price</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let product of productsAdmin | filterAdminProducts:searchProduct; let i=index">
+            <th>{{i+1}}</th>
+            <td>{{product.categoryName}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td *ngIf="product.categoryName !== 'Drinks'">{{product.weight}} g</td>
+            <td class="" *ngIf="product.categoryName == 'Drinks'">{{product.weight}} L</td>
+            <td>{{product.price}}</td>
+            <td><button class="btn btn-dark"  (click)="editProduct(product); openModalWithClass(template);">Edit</button></td>
+            <td><button class="btn btn-dark"  (click)="deleteProduct(product)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      
+    </div>
+  </div>
+</div>
+    

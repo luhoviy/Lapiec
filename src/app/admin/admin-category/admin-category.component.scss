@@ -1,0 +1,21 @@
+.card {
+border-radius: 5px;
+padding: 0;
+  .card-header {
+    padding: 2% 0;
+    span{
+        font-weight: 600;
+    }
+  }
+
+  .card-body{
+      padding: 2% 3%;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+  }
+}
+
+h5{
+  text-align: start;
+}
+

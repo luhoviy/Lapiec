@@ -1,0 +1,98 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "categoryID": 1,
+      "categoryName": "Pizza",
+      "name": "Капрічоза",
+      "description": "соус томатний, сир моцарела, шинка, свіжі гриби.\n\n",
+      "weight": 470,
+      "price": 141
+    },
+    {
+      "id": 2,
+      "categoryID": 1,
+      "categoryName": "Pizza",
+      "name": "Карбонара",
+      "description": "соус томатний, шинка, запечене яйце, сир моцарела, баварські ковбаски.\n\n",
+      "weight": 480,
+      "price": 142
+    },
+    {
+      "id": 3,
+      "categoryID": 1,
+      "categoryName": "Pizza",
+      "name": "Меланзана",
+      "description": "соус вершковий, пармезан, сир моцарела, шинка, баклажани.\n\n",
+      "weight": 430,
+      "price": 144
+    },
+    {
+      "id": 4,
+      "categoryID": 3,
+      "categoryName": "Salad",
+      "name": "Салат Цезар зі смаженим курячим філе",
+      "description": "Салат айсберг, помідори, куряче м`ясо, сир пармезан, перепелині яйця, духмяні сухарики та фірмова заправка. \n\n",
+      "weight": 250,
+      "price": 125
+    },
+    {
+      "id": 5,
+      "categoryID": 3,
+      "categoryName": "Salad",
+      "name": "Інсалата ді Фета",
+      "description": "Салат айсберг, свіжі овочі, сир фета, кунжут, оливки, бальзамічна заправка. \n\n",
+      "weight": 250,
+      "price": 112
+    },
+    {
+      "id": 6,
+      "categoryID": 2,
+      "categoryName": "Drinks",
+      "name": "Сік яблучний ",
+      "description": "ТМ “RICH”",
+      "weight": 1,
+      "price": 42
+    },
+    {
+      "id": 7,
+      "categoryID": 2,
+      "categoryName": "Drinks",
+      "name": "Coca-cola",
+      "description": "Ice water",
+      "weight": 0.5,
+      "price": 24
+    },
+    {
+      "id": 8,
+      "categoryID": 4,
+      "categoryName": "Sushi",
+      "name": "Гункан з ікрою лосося та філадельфією",
+      "description": "норі, рис, ікра лосося",
+      "weight": 35,
+      "price": 43
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "categoryName": "pizza"
+    },
+    {
+      "id": 2,
+      "categoryName": "drinks"
+    },
+    {
+      "id": 3,
+      "categoryName": "salad"
+    },
+    {
+      "id": 4,
+      "categoryName": "sushi"
+    },
+    {
+      "id": 5,
+      "categoryName": "other"
+    }
+  ]
+}
