@@ -23,7 +23,6 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminCategoryComponent } from './admin/admin-category/admin-category.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
-import { HryvniaPipe } from './hryvnia.pipe';
 import { SearchPipe } from './shared/pipes/search.pipe';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FilterAdminProductsPipe } from './shared/pipes/filter-admin-products.pipe';
@@ -50,7 +49,6 @@ import { FilterAdminProductsPipe } from './shared/pipes/filter-admin-products.pi
     AdminCategoryComponent,
     AdminProductsComponent,
     AdminOrdersComponent,
-    HryvniaPipe,
     SearchPipe,
     FilterAdminProductsPipe
   ],
