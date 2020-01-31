@@ -1,0 +1,43 @@
+.card {
+  width: 47%;
+  box-shadow: inset 0px 0px 19px #000000;
+
+  .card-title {
+    font-weight: 700;
+    font-size: 35px;
+  }
+
+  img {
+    transition: 0.5s;
+    border-radius: calc(.25rem - 1px);
+  }
+
+  img:focus {
+    border: none !important;
+    outline: none !important;
+  }
+
+  img:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    transform: scale(1.1);
+    z-index: 1000;
+    box-shadow: 0px 0px 38px 10px rgb(155, 148, 148);
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .card-text {
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    button {
+      font-size: 20px;
+    }
+
+  }
+}

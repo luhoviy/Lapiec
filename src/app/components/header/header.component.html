@@ -1,31 +1,38 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item" routerLinkActive = "active">
-          <a class="nav-link text-light" [routerLink]="[ '/home']">Home</a>
-        </li>
-        <li class="nav-item" routerLinkActive = "active">
-          <a class="nav-link text-light" [routerLink]="[ '/pizza']">Pizza</a>
-        </li>
-        <li class="nav-item" routerLinkActive = "active">
-          <a class="nav-link text-light" [routerLink]="[ '/salad']">Salad</a>
-        </li>
-        <li class="nav-item" routerLinkActive = "active">
-          <a class="nav-link text-light" [routerLink]="[ '/drinks']">Drinks</a>
-        </li>
-        <li class="nav-item" routerLinkActive = "active">
-          <a class="nav-link text-light" [routerLink]="[ '/payment']">Payment</a>
-        </li>
-        <li class="nav-item" routerLinkActive = "active">
-          <a class="nav-link text-light" [routerLink]="[ '/basket']">Basket</a>
-        </li>
-        <li class="nav-item" routerLinkActive = "active">
-          <a class="nav-link text-light" [routerLink]="[ '/admin']">Admin</a>
-        </li>
-        
-      </ul>
-    </div>
-  </nav>
+<nav class="mt-2 navbar mx-auto navbar-expand-lg navbar-light col">
+  <div class="collapse navbar-collapse " id="navbarNav">
+    <ul class="navbar-nav p-3 col">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link text-light" [routerLink]="[ '/home']">Home</a>
+      </li>
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link text-light" [routerLink]="['/menu','pizza']">Pizza</a>
+      </li>
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link text-light" [routerLink]="['/menu','drinks']">Drinks</a>
+      </li>
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link text-light" [routerLink]="['/menu','salad']">Salad</a>
+      </li>
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link text-light" [routerLink]="['/promotions']">Promotions</a>
+      </li>
+
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link text-light" [routerLink]="[ '/payment']">Payment</a>
+      </li>
+
+      <li class="nav-item " routerLinkActive="active">
+        <a class="nav-link text-light" [routerLink]="[ '/basket']">Basket</a>
+      </li>
+
+      <li *ngIf="adminStatus" class="nav-item col" routerLinkActive="active">
+        <a class="nav-link text-light text-right col" [routerLink]="[ '/admin']">Admin</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>

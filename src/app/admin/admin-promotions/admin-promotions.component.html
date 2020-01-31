@@ -1,0 +1,81 @@
+<div class="container col">
+    <ng-template #template>
+      <div class="modal-header bg-dark">
+        <h3 *ngIf="!editStatus" class="modal-title text-success pull-left">New promotion</h3>
+        <h3 *ngIf="editStatus" class="modal-title text-warning pull-left">Edit promotion</h3>
+      </div>
+      <div class="modal-body col container-fluid newpromModal">
+        <form class="">
+          <div class="form-group col row">
+
+          </div>
+          <div class="form-group col row">
+            <label class="col-3" for="promName">Promotion name:</label>
+            <input type="text" [(ngModel)]="promName" name="promName" class="form-control col-9" id="promName" placeholder="Promotion name">
+          </div>
+          <div class="form-group col row">
+            <label class="col-3" for="promDescription">Promotion description:</label>
+            <textarea [(ngModel)]="promDescription" name="promDescription" class="form-control col-9" id="promDescription" placeholder="Promotion description"></textarea>
+          </div>
+          <div class="form-group col row">
+            <label class="col-3" for="promWeight">Promotion start date:</label>
+            <input type="date"  [(ngModel)]="startDate" name="startDate" class="form-control col-9" id="startDate">
+          </div>
+          <div class="form-group col row">
+            <label class="col-3" for="promWeight">Promotion finish date:</label>
+            <input type="date" [(ngModel)]="finishDate" name="finishDate" class="form-control col-9" id="finishDate">
+          </div>
+          <div class="form-group col row">
+            <label class="col-3" for="promPrice">User profit:</label>
+            <input type="text" [(ngModel)]="promProfit" name="promProfit" class="form-control col-9" id="promProfit" placeholder="20% Знижки">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="resetForm(); modalRef.hide(); ">Close</button>
+        <button type="button" *ngIf="!editStatus" class="btn btn-dark"  (click)="modalRef.hide();addPromotion();">Add</button>
+        <button type="button" *ngIf="editStatus" class="btn btn-dark" [disabled]="!promName || !promDescription || !startDate || !finishDate || !promProfit"  (click)="saveEditPromotion(currentPromID); modalRef.hide();">Save edit</button>
+  
+      </div>
+    </ng-template>
+        
+        <div class="card">
+          <div class="card-header d-flex justify-content-between">
+    <h5>Promotion</h5>
+    <button type="button" class="btn btn-dark col-2"  (click)="editStatus = false; openModalWithClass(template)">Add</button>
+  </div>
+  
+      <div class="card-body">
+        <input type="text" [(ngModel)]="searchPromotion" name="searchPromotion" class="form-control" placeholder="Filter promotions...">
+        <table class="table table-bordered">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Start date</th>
+              <th scope="col">Finish date</th>
+              <th scope="col">Profit for user</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor="let prom of promotions; let i=index">
+              <th>{{i+1}}</th>
+              <td>{{prom.name}}</td>
+              <td>{{prom.description}}</td>
+              <td>{{prom.startDate | date:'dd MMM, yyyy'}}</td>
+              <td>{{prom.finishDate | date:'dd MMM, y'}}</td>
+              <td>{{prom.profit}}</td>
+              <td><button class="btn btn-dark"  (click)="editPromotion(i); openModalWithClass(template);">Edit</button></td>
+              <td><button class="btn btn-dark"  (click)="deletePromotion(prom.id)">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        
+      </div>
+    </div>
+  </div>
+      

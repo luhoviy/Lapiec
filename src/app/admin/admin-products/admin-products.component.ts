@@ -109,6 +109,7 @@ export class AdminProductsComponent implements OnInit {
   }
 
 
+  
 
   editProduct(product: IProduct): void {
     this.categoryName = product.categoryName

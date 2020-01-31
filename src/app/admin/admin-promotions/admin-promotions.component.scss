@@ -1,0 +1,28 @@
+table{
+    text-align: center;
+}
+.card{
+
+    .card-header{
+        align-items: center;
+        padding: 2% 5%;
+    }
+
+    .card-body{
+        input{
+            margin-bottom: 3%;
+        }
+    }
+}
+
+.modal-header{
+    h3{
+        width: 100%;
+        text-align: center;
+    }
+}
+.modal-body{
+    textarea{
+        min-height: 125px;
+    }
+    }

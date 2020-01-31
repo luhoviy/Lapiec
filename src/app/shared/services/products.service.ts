@@ -33,4 +33,7 @@ export class ProductsService {
     return this.http.put<Array<IProduct>>(`${this.url}/${product.id}`,product)
   }
   
+  getProductDetails(id?:number):Observable<IProduct>{
+    return this.http.get<IProduct>(`${this.url}/${id}`)
+  }
 }

@@ -1,0 +1,13 @@
+    
+    <div class="product mx-auto row d-flex justify-content-around col-11">
+        <img class="col-4" src="https://www.lapiec-pizza.com.ua/wp-content/uploads/2018/07/Flamingo-1.jpg">
+        <div class="col-7">
+            <h1 >{{productDetails?.name}}</h1>
+            <h4 >{{productDetails?.description | lowercase}} {{productDetails?.weight}} г</h4>
+            <hr>
+            <div class="row">
+                <h4 class="col ">{{productDetails?.price | currency}}</h4>
+            </div>
+        </div>
+    </div>
+    

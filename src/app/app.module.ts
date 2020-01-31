@@ -9,9 +9,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
-import { PizzaComponent } from './pages/pizza/pizza.component';
-import { SaladComponent } from './pages/salad/salad.component';
-import { DrinksComponent } from './pages/drinks/drinks.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { BasketComponent } from './pages/basket/basket.component';
 import { InterfacesComponent } from './shared/interfaces/interfaces.component';
@@ -26,6 +23,11 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
 import { SearchPipe } from './shared/pipes/search.pipe';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { FilterAdminProductsPipe } from './shared/pipes/filter-admin-products.pipe';
+import { CurrencyPipe } from './shared/pipes/currency.pipe';
+import { ProductsComponent } from './pages/products/products.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { PromotionsComponent } from './pages/promotions/promotions.component';
+import { AdminPromotionsComponent } from './admin/admin-promotions/admin-promotions.component';
 
 
 
@@ -35,9 +37,6 @@ import { FilterAdminProductsPipe } from './shared/pipes/filter-admin-products.pi
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    PizzaComponent,
-    SaladComponent,
-    DrinksComponent,
     PaymentComponent,
     BasketComponent,
     InterfacesComponent,
@@ -50,7 +49,12 @@ import { FilterAdminProductsPipe } from './shared/pipes/filter-admin-products.pi
     AdminProductsComponent,
     AdminOrdersComponent,
     SearchPipe,
-    FilterAdminProductsPipe
+    FilterAdminProductsPipe,
+    CurrencyPipe,
+    ProductsComponent,
+    ProductDetailsComponent,
+    PromotionsComponent,
+    AdminPromotionsComponent
   ],
   imports: [
     BrowserModule,

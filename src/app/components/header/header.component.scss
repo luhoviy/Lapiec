@@ -1,8 +1,26 @@
-nav{
-    font-size: 20px;
-        .active a{
-            color: rgb(25, 173, 99) !important;
-        }
+nav {
+  position: relative;
+  font-size: 20px;
+  box-shadow: inset 0px 0px 13px #aca7a7;
+  border-radius: 25px;
+  background-color: black;
+  width: 97%;
 
+  a {
+    font-size: 20px;
+  }
+
+  .active a {
+    color: rgb(141, 167, 177) !important;
+  }
+
+  img {
+    width: 60px;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+  }
 
 }
