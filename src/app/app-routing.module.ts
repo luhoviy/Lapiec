@@ -12,6 +12,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 import { PromotionsComponent } from './pages/promotions/promotions.component';
 import { AdminPromotionsComponent } from './admin/admin-promotions/admin-promotions.component';
+import { PromotionDetailsComponent } from './pages/promotion-details/promotion-details.component';
 
 
 
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: 'payment',component:PaymentComponent},
   { path: 'basket',component:BasketComponent},
   { path: 'promotions',component:PromotionsComponent},
-  // { path: 'promotions',component:PromotionsComponent},
+  { path: 'promotions/:id',component:PromotionDetailsComponent},
   { path: 'menu/:name',component:ProductsComponent},
   { path: 'menu/:name/:id',component:ProductDetailsComponent},
   { path: 'admin',component:AdminComponent,children:[

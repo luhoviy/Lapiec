@@ -28,4 +28,8 @@ export class PromotionsService {
    deletePromotion(id:number){
      return this.http.delete(`${this.url}/${id}`);
    }
+
+   getSinglePromotion(id:number){
+     return this.http.get<IPromotions>(`${this.url}/${id}`);
+   }
 }

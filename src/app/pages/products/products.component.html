@@ -1,11 +1,11 @@
 <div class="main mb-5 container col-11">
   <div class="row d-flex justify-content-between">
-    <div *ngFor="let product of products" id="card" class="card p-3 mt-5">
+    <div  [@showItem]="isShown ? 'shown' : 'hidden'" *ngFor="let product of products" id="card" class="card p-3 mt-5">
       <img class="card-img-top" [routerLink]="['/menu', product.categoryName | lowercase, product.id]" src="https://www.lapiec-pizza.com.ua/wp-content/uploads/2018/07/Flamingo-1.jpg">
       <div class="card-body">
         <h2 class="card-title text-center">{{product.name | titlecase}}</h2>
         <div class="description">
-          <p class="card-text text-center">{{product.description}} {{product.weight}} g</p>
+          <p class="card-text text-center">{{product.description}} {{product.weight}} {{product.categoryName !== 'Drinks' ? 'гр' : 'л'}}</p>
         </div>
         <div>
           <button class="btn btn-dark col-12">To order</button>

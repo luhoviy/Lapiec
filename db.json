@@ -37,10 +37,9 @@
     },
     {
       "id": 7,
-      "categoryID": 2,
       "categoryName": "Drinks",
       "name": "Coca-cola",
-      "description": "Ice water",
+      "description": "Безалкогольний напій",
       "weight": 0.5,
       "price": 24
     },

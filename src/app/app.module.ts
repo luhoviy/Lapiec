@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +29,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 import { PromotionsComponent } from './pages/promotions/promotions.component';
 import { AdminPromotionsComponent } from './admin/admin-promotions/admin-promotions.component';
+import { PromotionDetailsComponent } from './pages/promotion-details/promotion-details.component';
 
 
 
@@ -54,13 +56,15 @@ import { AdminPromotionsComponent } from './admin/admin-promotions/admin-promoti
     ProductsComponent,
     ProductDetailsComponent,
     PromotionsComponent,
-    AdminPromotionsComponent
+    AdminPromotionsComponent,
+    PromotionDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     ModalModule.forRoot()
   ],
   providers: [],

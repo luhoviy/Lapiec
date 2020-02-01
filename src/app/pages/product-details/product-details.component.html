@@ -1,13 +1,22 @@
-    
-    <div class="product mx-auto row d-flex justify-content-around col-11">
-        <img class="col-4" src="https://www.lapiec-pizza.com.ua/wp-content/uploads/2018/07/Flamingo-1.jpg">
-        <div class="col-7">
-            <h1 >{{productDetails?.name}}</h1>
-            <h4 >{{productDetails?.description | lowercase}} {{productDetails?.weight}} г</h4>
-            <hr>
-            <div class="row">
-                <h4 class="col ">{{productDetails?.price | currency}}</h4>
-            </div>
+    <div class="product mx-auto row d-flex justify-content-around col-9">
+      <img [@showItem]="isShown ? 'shown' : 'hiddenLeft'" class="col-6" src="https://www.lapiec-pizza.com.ua/wp-content/uploads/2018/07/Flamingo-1.jpg">
+      <div class="col-6 d-flex flex-column justify-content-between align-items-center">
+        <div class="col">
+          <h1 [@showItem]="isShown ? 'shown' : 'hiddenTop'" class="col text-warning">{{productDetails?.name}}</h1>
+          <h4 [@showItem]="isShown ? 'shown' : 'hiddenRight'" class="col mt-3  text-left">{{productDetails?.description | lowercase}}</h4>
+          <h4 [@showItem]="isShown ? 'shown' : 'hiddenRight'" class="col mt-5">{{productDetails?.categoryName !== 'Drinks' ? 'Вага: ' : 'Ємність: '}} {{productDetails?.weight}} {{productDetails?.categoryName !== 'Drinks' ? 'гр' : 'л'}}</h4>
+          <hr>
         </div>
+        <div [@showItem]="isShown ? 'shown' : 'hiddenBottom'" class="row container d-flex align-items-center justify-content-center mb-3">
+            <h4 class="text-center col-2 mr-3">Count:</h4>
+            <h2 (click)="orderCount>1 ? orderCount = orderCount - 1 : null" class="text-center count_btn text-warning  col-1">-</h2>
+            <h5 class="bg-white order_count  col-1 text-center text-dark p-2">{{orderCount}}</h5>
+            <h2 (click)="orderCount = orderCount + 1" class="text-center count_btn text-warning col-1">+</h2>
+
+        </div>
+        <div [@showItem]="isShown ? 'shown' : 'hiddenBottom'">
+          <h4 class="col">To pay: <span class="text-warning">{{productDetails?.price * orderCount | currency}}</span></h4>
+        </div>
+        <button [@showItem]="isShown ? 'shown' : 'hiddenBottom'"  class="btn order_btn mt-3 btn-warning text-dark">To order</button>
+      </div>
     </div>
-    
