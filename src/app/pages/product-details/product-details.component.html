@@ -1,5 +1,5 @@
     <div class="product mx-auto row d-flex justify-content-around col-9">
-      <img [@showItem]="isShown ? 'shown' : 'hiddenLeft'" class="col-6" src="https://www.lapiec-pizza.com.ua/wp-content/uploads/2018/07/Flamingo-1.jpg">
+      <img [@showItem]="isShown ? 'shown' : 'hiddenLeft'" class="col-6" [src]="productDetails?.image">
       <div class="col-6 d-flex flex-column justify-content-between align-items-center">
         <div class="col">
           <h1 [@showItem]="isShown ? 'shown' : 'hiddenTop'" class="col text-warning">{{productDetails?.name}}</h1>

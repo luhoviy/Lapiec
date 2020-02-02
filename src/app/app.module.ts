@@ -5,6 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
+// Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -65,7 +74,12 @@ import { PromotionDetailsComponent } from './pages/promotion-details/promotion-d
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase, 'pizzeria'), 
+    AngularFireAnalyticsModule, 
+    AngularFirestoreModule,
+    AngularFireAuthModule, 
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

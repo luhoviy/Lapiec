@@ -6,7 +6,6 @@ export interface IProduct {
     description:string;
     weight:number;
     price:number;
-    size?:string;
-    image?:string;
+    image:string;
     
 }

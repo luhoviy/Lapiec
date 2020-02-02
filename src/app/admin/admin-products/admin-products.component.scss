@@ -1,5 +1,8 @@
 table{
     text-align: center;
+    .column_image:hover{
+        cursor: zoom-in;
+    }
 }
 .card{
 
@@ -7,7 +10,7 @@ table{
         align-items: center;
         padding: 2% 5%;
     }
-
+    
     .card-body{
         input{
             margin-bottom: 3%;

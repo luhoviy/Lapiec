@@ -2,73 +2,101 @@
   "products": [
     {
       "id": 1,
+      "categoryID": 1,
       "categoryName": "Pizza",
-      "name": "Капрічоза",
-      "description": "соус томатний, сир моцарела, шинка, свіжі гриби.\n\n",
-      "weight": 470,
-      "price": 141
+      "name": "Піца La П’єц",
+      "description": "соус томатний, шинка, баварські ковбаски, сир моцарела, ковбаса салямі, прошуто.\n\n",
+      "weight": 480,
+      "price": 157,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2F3b70a7ff-61b5-44fb-a6d2-9b56b179a5e9.jpeg?alt=media&token=5cdae064-850c-4a09-a0d5-f6a84f61e6c8"
     },
     {
       "id": 2,
       "categoryID": 1,
       "categoryName": "Pizza",
-      "name": "Карбонара",
-      "description": "соус томатний, шинка, запечене яйце, сир моцарела, баварські ковбаски.\n\n",
-      "weight": 480,
-      "price": 142
+      "name": "Капрічоза",
+      "description": "соус томатний, сир моцарела, шинка, свіжі гриби.\n\n",
+      "weight": 470,
+      "price": 141,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2F4dde51ea-3c13-4d6e-b057-50117ce1e6a0.jpeg?alt=media&token=eaf3e4ef-9a5b-43b5-8758-d05caf5c01a8"
     },
     {
-      "id": 4,
-      "categoryID": 3,
-      "categoryName": "Salad",
-      "name": "Салат Цезар зі смаженим курячим філе",
-      "description": "Салат айсберг, помідори, куряче м`ясо, сир пармезан, перепелині яйця, духмяні сухарики та фірмова заправка. \n\n",
-      "weight": 250,
-      "price": 125
-    },
-    {
-      "id": 5,
-      "categoryID": 3,
-      "categoryName": "Salad",
-      "name": "Інсалата ді Фета",
-      "description": "Салат айсберг, свіжі овочі, сир фета, кунжут, оливки, бальзамічна заправка. \n\n",
-      "weight": 250,
-      "price": 112
-    },
-    {
-      "id": 7,
-      "categoryName": "Drinks",
-      "name": "Coca-cola",
-      "description": "Безалкогольний напій",
-      "weight": 0.5,
-      "price": 24
-    },
-    {
-      "id": 13,
-      "categoryID": 3,
-      "categoryName": "Salad",
-      "name": "Прімавера",
-      "description": "сир моцарела, салат айсберг, помідор чері, огірок, болгарський перець, оливкова олія, фреш лимонний, орегано",
-      "weight": 255,
-      "price": 99
-    },
-    {
-      "id": 14,
-      "categoryID": 1,
-      "categoryName": "Pizza",
-      "name": "Маргарита",
-      "description": "соус томатний, сир моцарела, помідори",
-      "weight": 420,
-      "price": 99
-    },
-    {
-      "id": 15,
+      "id": 3,
       "categoryID": 1,
       "categoryName": "Pizza",
       "name": "Кватро формаджі",
       "description": "соус вершковий, пармезан, сир моцарела, сир рікотта, сир дор блю,  волоський горіх, груша.\n\n",
       "weight": 410,
-      "price": 172
+      "price": 172,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2F1e718f33-c272-4b6a-8706-48a15993c891.jpeg?alt=media&token=a517b3e9-603a-407f-8c20-dbdb7e953153"
+    },
+    {
+      "id": 4,
+      "categoryID": 1,
+      "categoryName": "Pizza",
+      "name": "Кальцоне аль Форно",
+      "description": "соус томатний, пармезан, сир моцарела, сир рікота, шинка, помідори.\n\n",
+      "weight": 470,
+      "price": 133,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2F48711a09-8032-407d-9bc6-329b3163b729.jpeg?alt=media&token=a372abe7-1792-4a61-a3f9-4fb392730c74"
+    },
+    {
+      "id": 5,
+      "categoryName": "Salad",
+      "name": "Салат Цезар",
+      "description": "Салат айсберг, помідори, куряче м`ясо, сир пармезан, перепелині яйця, духмяні сухарики та фірмова заправка. \n\n",
+      "weight": 250,
+      "price": 125,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2F1d3af593-f713-4545-ad50-8b18b282ee1b.jpeg?alt=media&token=da2a4fca-b926-4ce0-86a2-2c455225a48c"
+    },
+    {
+      "id": 6,
+      "categoryID": 3,
+      "categoryName": "Salad",
+      "name": "Інсалата ді Фета",
+      "description": "Салат айсберг, свіжі овочі, сир фета, кунжут, оливки, бальзамічна заправка.\n\n",
+      "weight": 250,
+      "price": 112,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2F23ef6385-55ff-459b-8787-1846384f0771.jpeg?alt=media&token=baf613b6-40c9-4517-a9a7-3c40e14787f9"
+    },
+    {
+      "id": 7,
+      "categoryID": 3,
+      "categoryName": "Salad",
+      "name": "Прімавера",
+      "description": "сир моцарела, салат айсберг, помідор чері, огірок, болгарський перець, оливкова олія, фреш лимонний, орегано. \n\n",
+      "weight": 255,
+      "price": 99,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2Faefd5ffb-f174-4b04-b321-a95579a086d6.jpeg?alt=media&token=708b700e-5fc4-452c-a6a3-5eecbfe15a43"
+    },
+    {
+      "id": 8,
+      "categoryID": 2,
+      "categoryName": "Drinks",
+      "name": "Coca Cola",
+      "description": "Добре смакує з піцою.",
+      "weight": 1,
+      "price": 33,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2Fe9d94e17-1457-4335-9af9-9bb57bd01381.jpeg?alt=media&token=e96436b2-d63b-4f50-a23c-1e01b30a2afe"
+    },
+    {
+      "id": 9,
+      "categoryID": 2,
+      "categoryName": "Drinks",
+      "name": "Сік екзотик ",
+      "description": "ТМ “RICH”\n",
+      "weight": 1,
+      "price": 42,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2F2bd0dcaf-5c26-4cc2-b855-4b8942ebd856.jpeg?alt=media&token=495b7173-550b-45b1-9827-36f924e8c44b"
+    },
+    {
+      "id": 10,
+      "categoryName": "Drinks",
+      "name": "BonAqua ",
+      "description": "Вода негазована.",
+      "weight": 0.5,
+      "price": 20,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2Fea992b61-91d9-478b-a0fe-c70cf4c6a763.jpeg?alt=media&token=a75036c2-75ac-47e3-922d-dde5ed952c27"
     }
   ],
   "categories": [
@@ -83,10 +111,6 @@
     {
       "id": 3,
       "categoryName": "salad"
-    },
-    {
-      "id": 4,
-      "categoryName": "sushi"
     }
   ],
   "promotions": [
