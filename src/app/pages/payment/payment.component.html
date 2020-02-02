@@ -1,0 +1,71 @@
+<div class="col-12 pb-5 main mx-auto">
+  <h1 [@showItem]="isShown ? 'shown' : 'title'" class="title text-center mb-5 text-dark">Зони доставки у Львові</h1>
+  <div class="row col-11 align-items-center mx-auto justify-content-around">
+    <div class="col">
+      <div class="row">
+        <img [@showItem]="isShown ? 'shown' : '29min'" class="col-4" src="../../../assets/images/29-min.svg" alt="">
+        <div class="col">
+          <h2 [@showItem]="isShown ? 'shown' : 'gTitle'" class="mx-auto text-center text-success">Зелена зона</h2>
+          <p [@showItem]="isShown ? 'shown' : 'gMinutes'" class="col" class="text-center">До <b>29</b> хвилин</p>
+          <div class="col align-items-center">
+            <p [@showItem]="isShown ? 'shown' : 'gOrder'" class="text-center col">Мінімальне замовлення</p>
+            <p [@showItem]="isShown ? 'shown' : 'gPrice'" class="text-center col"><b>150</b> грн</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <img [@showItem]="isShown ? 'shown' : '59min'" class="col-4" src="../../../assets/images/59-min-yellow.svg"
+          alt="">
+        <div class="col">
+          <h2 [@showItem]="isShown ? 'shown' : 'yTitle'" class="mx-auto text-center text-warning">Жовта зона</h2>
+          <p [@showItem]="isShown ? 'shown' : 'yMinutes'" class="col" class="text-center">До <b>59</b> хвилин</p>
+          <div class="col align-items-center">
+            <p [@showItem]="isShown ? 'shown' : 'yOrder'" class="text-center col">Мінімальне замовлення</p>
+            <p [@showItem]="isShown ? 'shown' : 'yPrice'" class="text-center col"><b>250</b> грн</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img [@showItem]="isShown ? 'shown' : 'map'" class="col-7 delivery_zone"
+      src="../../../assets/images/delivery_zone.jpg" alt="">
+
+  </div>
+
+  <h5 [@showItem]="isShown ? 'shown' : 'details'" class="col-8 mx-auto mt-5">Сервіс доставки піци у Львові «La П’єц»
+    пропонує надзвичайно зручний механізм доставки
+    та оплати. Ми вважаємо, що наші стандарти роботи мають бути класикою та комфортом для замовника.
+  </h5>
+
+  <h5 [@showItem]="isShown ? 'shown' : 'details'" class="col-8 mx-auto mt-3">Отже, почнемо з доставки. Ми ділимо Львів
+    на зони доставки – зелену і жовту. Для кожної зони ми чітко визначаємо час приїзду кур’єра і в разі затримки Ви
+    отримуєте приємний сюрприз, про який ми поговоримо трохи пізніше. Для кожної із зон доставка є абсолютно
+    безкоштовною.
+  </h5>
+
+  <h5 [@showItem]="isShown ? 'shown' : 'details'" class="col-8 mx-auto mt-3">Доставка в зелену зону Львова – до 29
+    хвилин. Доставка в жовту зону – до 59 хвилин. Ми дуже цінуємо Ваш час, тому завжди намагаємось вкластись у
+    мінімальні терміни і вимірюємо час хвилинами, адже кожна хвилина важлива. Погодьтесь, приємно отримати смачну,
+    гарячу та запашну піцу протягом 29 хвилин, правда?
+  </h5>
+
+  <h5 [@showItem]="isShown ? 'shown' : 'details'" class="col-8 mx-auto mb-5 mt-3">Якщо кур’єр спізнюється, Ви отримуєте не
+    лише вибачення, а ще й промокод на безкоштовну піцу при наступному замовленні!
+  </h5>
+
+  <h1 [@showItem]="isShown ? 'shown' : 'details'"  class="col-8 mx-auto mt-5 text-center">Спосіб оплати
+</h1>
+<div [@showItem]="isShown ? 'shown' : 'details'" class="col-8 mx-auto pb-5 row mt-3">
+    <div class="col align-items-center d-flex flex-column">
+        <img class="col-5 mb-4 mx-auto" src="../../../assets/images/money_1.svg" alt="">
+        <h4 class="col text-center mx-auto">Оплата готівкою</h4>
+        <h6 class="col text-center mx-auto">Розраховуйтесь за свою улюблену піцу La П’єц готівкою при отриманні</h6>
+    
+    </div>
+    <div class="col align-items-center d-flex flex-column">
+        <img  class="col-5 mb-4 mx-auto" src="../../../assets/images/money_2.svg" alt="">
+        <h4 class="col text-center mx-auto mb-5">Оплата онлайн через сервіс LiqPay</h4>
+        <h6 class="col text-center mx-auto">Розраховуйтесь за свою улюблену піцу La П’єц онлайн через сервіс LiqPay aбо карткою при отриманні.</h6>
+    
+    </div>
+</div>
+</div>

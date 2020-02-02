@@ -42,6 +42,7 @@ import { PromotionDetailsComponent } from './pages/promotion-details/promotion-d
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +80,7 @@ import { PromotionDetailsComponent } from './pages/promotion-details/promotion-d
     AngularFireAnalyticsModule, 
     AngularFirestoreModule,
     AngularFireAuthModule, 
-    AngularFireStorageModule
+    AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

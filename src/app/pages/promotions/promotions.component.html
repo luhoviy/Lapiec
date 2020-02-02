@@ -1,6 +1,6 @@
-<div class="main mb-5 pt-3 container col-8">
+<div class="main mb-5 container col-8">
     <div class="row d-flex justify-content-between">
-      <div [@showItem]="isShown ? 'shown' : prom.id%2 ? 'hiddenLeft' : 'hiddenRight' " *ngFor="let prom of promotions; let i=index;" id="card" class="card pt-3 pr-3 pl-3 mt-3">
+      <div [@showItem]="isShown ? 'shown' : prom.id%2 ? 'hiddenLeft' : 'hiddenRight' " *ngFor="let prom of promotions; let i=index;" id="card" class="card pt-3 pr-3 pl-3">
         <img class="card-img-top" [routerLink]="[ '/promotions', prom.id ]" src="https://www.lapiec-pizza.com.ua/wp-content/uploads/2018/07/discount-1-2.jpg">
         <div class="card-body">
           <h2 class="card-title text-center">{{prom.name | titlecase}}</h2>

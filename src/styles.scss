@@ -22,9 +22,8 @@
 body {
   font-family: 'Comfortaa', cursive;
   min-height: 100vh;
-  background: url(assets/images/bg.jfif);
-  background-size:cover;
-  background-repeat: repeat; 
+  background: linear-gradient(to right, #1f1c2c, #c5c1c1, #1f1c2c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
   
 
 }

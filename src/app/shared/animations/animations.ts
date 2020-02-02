@@ -61,3 +61,103 @@ trigger('showItem', [
       animate('0.5s')
     ])
   ]);
+
+
+
+export const onInitPaymentAnimate =
+trigger('showItem', [
+    state('shown', style({
+      opacity: 1,
+    })),
+    state('title', style({
+      opacity: 0,
+      transform:('translateY(-50px)'),
+    })),
+    state('details', style({
+      opacity: 0,
+      transform:('translateY(150px)')
+    })),
+    state('29min', style({
+      opacity: 0,
+      transform:('translateX(-150px)'),
+    })),
+    state('59min', style({
+      opacity: 0,
+      transform:('translateX(-250px)'),
+    })),
+    state('yTitle', style({
+      opacity: 0,
+      transform:('translateY(150px)'),
+    })),
+    state('gTitle', style({
+      opacity: 0,
+      transform:('translateY(100px)'),
+    })),
+    state('gMinutes', style({
+      opacity: 0,
+      transform:('translateY(100px)'),
+    })),
+    state('yMinutes', style({
+      opacity: 0,
+      transform:('translateY(150px)'),
+    })),
+    state('gOrder', style({
+      opacity: 0,
+      transform:('translateY(150px)'),
+    })),
+    state('yOrder', style({
+      opacity: 0,
+      transform:('translateY(150px)'),
+    })),
+    state('gPrice', style({
+      opacity: 0,
+      transform:('translateY(150px)'),
+    })),
+    state('yPrice', style({
+      opacity: 0,
+      transform:('translateY(150px)'),
+    })),
+    state('map', style({
+      opacity: 0,
+      transform:('translateX(50px)')
+    })),
+    transition('title => shown', [
+      animate('0.5s')
+    ]),
+    transition('details => shown', [
+      animate('1.5s')
+    ]),
+    transition('29min => shown', [
+      animate('0.5s')
+    ]),
+    transition('59min => shown', [
+      animate('1.5s')
+    ]),
+    transition('gTitle => shown', [
+      animate('0.3s')
+    ]),
+    transition('gMinutes => shown', [
+      animate('0.5s')
+    ]),
+    transition('gOrder => shown', [
+      animate('0.7s')
+    ]),
+    transition('gPrice => shown', [
+      animate('1s')
+    ]),
+    transition('yTitle => shown', [
+      animate('0.9s')
+    ]),
+    transition('yMinutes => shown', [
+      animate('1.1s')
+    ]),
+    transition('yOrder => shown', [
+      animate('1.3s')
+    ]),
+    transition('yPrice => shown', [
+      animate('1.5s')
+    ]),
+    transition('map => shown', [
+      animate('1.5s')
+    ])
+  ]);
