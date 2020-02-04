@@ -10,7 +10,7 @@
             <p class="card-text text-center">{{product.description}} {{product.weight}} {{product.categoryName !== 'Drinks' ? 'гр' : 'л'}}</p>
           </div>
           <div>
-            <button [routerLink]="['/menu', product.categoryName | lowercase, product.id]" class="btn btn-dark col-12">To order</button>
+            <button [routerLink]="['/menu', product.categoryName | lowercase, product.id]" class="btn btn-dark col-12">Замовити</button>
           </div>
         </div>
       </div>

@@ -76,6 +76,39 @@ trigger('showItem', [
   ]);
 
 
+export const onInitHomeAnimations =
+trigger('showItem', [
+    state('shown', style({
+      opacity: 1,
+    })),
+    state('logoHidden', style({
+      opacity: 0,
+    })),
+    state('fHidden', style({
+      opacity: 0,
+    })),
+    state('iHidden', style({
+      opacity: 0,
+      
+    })),
+    state('mHidden', style({
+      opacity: 0,
+    })),
+    transition('logoHidden => shown',[
+      animate('2.5s')
+    ]),
+    transition('fHidden => shown',[
+      animate('1s')
+    ]),
+    transition('iHidden => shown',[
+      animate('1s')
+    ]),
+    transition('mHidden => shown',[
+      animate('1s')
+    ])
+  ]);
+
+
 
 export const onInitPaymentAnimate =
 trigger('showItem', [

@@ -1,11 +1,10 @@
-    <div class="product mx-auto row d-flex justify-content-around col-9">
+    <div class="product mx-auto pb-4 row d-flex justify-content-around col-9">
       <img [@showItem]="isShown ? 'shown' : 'hiddenLeft'" class="col-6" [src]="productDetails?.image">
       <div class="col-6 d-flex flex-column justify-content-between align-items-center">
         <div class="col">
           <h1 [@showItem]="isShown ? 'shown' : 'hiddenTop'" class="col" style="color: rgb(255, 230, 0);">{{productDetails?.name}}</h1>
           <h4 [@showItem]="isShown ? 'shown' : 'hiddenRight'" class="col mt-3  text-left">{{productDetails?.description | lowercase}}</h4>
           <h4 [@showItem]="isShown ? 'shown' : 'hiddenRight'" class="col mt-5">{{productDetails?.categoryName !== 'Drinks' ? 'Вага: ' : 'Ємність: '}} {{productDetails?.weight}} {{productDetails?.categoryName !== 'Drinks' ? 'гр' : 'л'}}</h4>
-          <hr>
         </div>
         <div [@showItem]="isShown ? 'shown' : 'hiddenBottom'" class="row container d-flex align-items-center justify-content-center mb-3">
             <h4 class="text-center col-2 mr-3">Count:</h4>
@@ -15,8 +14,8 @@
 
         </div>
         <div [@showItem]="isShown ? 'shown' : 'hiddenBottom'">
-          <h4 class="col">To pay: <span class="">{{productDetails?.price * orderCount | currency}}</span></h4>
+          <h4 class="col">To pay: <span style="color: rgb(255, 230, 0);" class="">{{productDetails?.price * orderCount | currency}}</span></h4>
         </div>
-        <button [@showItem]="isShown ? 'shown' : 'hiddenBottom'"  class="btn order_btn mt-3 btn-warning text-dark">To order</button>
+        <button [@showItem]="isShown ? 'shown' : 'hiddenBottom'"  class="btn order_btn mt-3 btn-dark text-white">Замовити</button>
       </div>
     </div>

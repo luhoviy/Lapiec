@@ -1,11 +1,11 @@
 <div class="col-12 pb-5 main mx-auto">
-  <h1 [@showItem]="isShown ? 'shown' : 'title'" class="title text-center mb-5 text-dark">Зони доставки у Львові</h1>
+  <h1 [@showItem]="isShown ? 'shown' : 'title'" class="title text-center mb-5">Зони доставки у Львові</h1>
   <div class="row col-11 align-items-center mx-auto justify-content-around">
     <div class="col">
       <div class="row">
         <img [@showItem]="isShown ? 'shown' : '29min'" class="col-4" src="../../../assets/images/29-min.svg" alt="">
         <div class="col">
-          <h2 [@showItem]="isShown ? 'shown' : 'gTitle'" class="mx-auto text-center text-success">Зелена зона</h2>
+          <h2 [@showItem]="isShown ? 'shown' : 'gTitle'" class="mx-auto text-center" style="color: rgb(145, 218, 0);">Зелена зона</h2>
           <p [@showItem]="isShown ? 'shown' : 'gMinutes'" class="col" class="text-center">До <b>29</b> хвилин</p>
           <div class="col align-items-center">
             <p [@showItem]="isShown ? 'shown' : 'gOrder'" class="text-center col">Мінімальне замовлення</p>
@@ -17,7 +17,7 @@
         <img [@showItem]="isShown ? 'shown' : '59min'" class="col-4" src="../../../assets/images/59-min-yellow.svg"
           alt="">
         <div class="col">
-          <h2 [@showItem]="isShown ? 'shown' : 'yTitle'" class="mx-auto text-center text-warning">Жовта зона</h2>
+          <h2 [@showItem]="isShown ? 'shown' : 'yTitle'" class="mx-auto text-center" style="color: rgb(255, 230, 0);">Жовта зона</h2>
           <p [@showItem]="isShown ? 'shown' : 'yMinutes'" class="col" class="text-center">До <b>59</b> хвилин</p>
           <div class="col align-items-center">
             <p [@showItem]="isShown ? 'shown' : 'yOrder'" class="text-center col">Мінімальне замовлення</p>

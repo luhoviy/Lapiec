@@ -9,6 +9,6 @@ export class Product implements IProduct {
         public description: string,
         public weight: number,
         public price: number,
-        public image: string
+        public image?: string
     ) { }
 }

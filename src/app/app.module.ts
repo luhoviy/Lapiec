@@ -41,6 +41,7 @@ import { AdminPromotionsComponent } from './admin/admin-promotions/admin-promoti
 import { PromotionDetailsComponent } from './pages/promotion-details/promotion-details.component';
 import { NgxUiLoaderModule,NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 import { ngxUiLoaderConfig } from './preloading-config';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
 
@@ -84,7 +85,8 @@ import { ngxUiLoaderConfig } from './preloading-config';
     AngularFireAuthModule, 
     AngularFireStorageModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
-    NgxUiLoaderRouterModule.forRoot({exclude:['/admin/products','/admin/category','/admin/orders','/admin/promotions']})
+    NgxUiLoaderRouterModule.forRoot({exclude:['/admin/products','/admin/category','/admin/orders','/admin/promotions']}),
+    CarouselModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
