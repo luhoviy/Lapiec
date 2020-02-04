@@ -23,5 +23,4 @@ export class PromotionDetailsComponent implements OnInit {
       )
     )
   }
-
 }

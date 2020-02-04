@@ -30,7 +30,6 @@ export class AdminCategoryComponent implements OnInit {
   }
  
 
-
   private getCategories(): void {
     this.categoryService.getJSONcategories().subscribe(
       data => {

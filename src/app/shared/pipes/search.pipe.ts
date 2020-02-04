@@ -4,7 +4,6 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'search'
 })
 export class SearchPipe implements PipeTransform {
-
   
   transform(categories: any, currentCategory:string): any {
     if(!currentCategory){
@@ -18,10 +17,6 @@ export class SearchPipe implements PipeTransform {
     if(currentCategory){
       categories = categories.filter(item => item.categoryName.toLowerCase().indexOf(currentCategory.toLowerCase()) !== -1) 
       return categories; 
-      }
-
-    
-    
+      }  
+    }
   }
-
-}

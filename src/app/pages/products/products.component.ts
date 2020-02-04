@@ -27,9 +27,4 @@ export class ProductsComponent implements OnInit {
       )
     )
   }
-
-  // ngAfterContentInit(): void {
-  //   setTimeout(() => this.isShown = true, 400);
-  // }
-
 }

@@ -25,7 +25,6 @@ export class ProductDetailsComponent implements OnInit {
 
   }
 
-
   getProductDetails():void{
     this.id = +this.rout.snapshot.paramMap.get('id');
     this.productService.getProductDetails(this.id).subscribe(

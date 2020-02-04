@@ -1,34 +1,34 @@
-<div [@showItem]="isShown ? 'shown' : 'hidden'" class=" card-block card d-flex flex-column align-items-center container-fluid col-12">
-        <div class="card-header col-12">
-            <div class="col-11 align-items-center d-flex justify-content-between container">
-            <h5 >Category</h5>
-                <button type="button" class="btn btn-dark col-2" (click)="editStatus = false;openModal(template); ">Add</button>
-            </div>
-        </div>
-        <div  class="col-12 card-body">
+<div [@showItem]="isShown ? 'shown' : 'hidden'"
+  class=" card-block card d-flex flex-column align-items-center container-fluid col-12">
+  <div class="card-header col-12">
+    <div class="col-11 align-items-center d-flex justify-content-between container">
+      <h5>Category</h5>
+      <button type="button" class="btn btn-dark col-2" (click)="editStatus = false;openModal(template); ">Add</button>
+    </div>
+  </div>
+  <div class="col-12 card-body">
+    <input type="text" [(ngModel)]="search" name="search" class="form-control" placeholder="Filter category...">
+    <hr>
 
-            <input type="text" [(ngModel)]="search" name="search" class="form-control" placeholder="Filter category...">
-            <hr>
-
-            <table class="table table-bordered">
-                <thead class="thead-light">
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col" class="col-7" >Name</th>
-                    <th scope="col" >Edit</th>
-                    <th scope="col" >Delete</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let category of categories | search:search; let i=index">
-                      <th>{{i+1}}</th>
-                      <td>{{category.categoryName | titlecase}}</td>
-                      <td><button class="btn btn-dark" (click)="editCategory(i); openModal(template)">Edit</button></td>
-                      <td><button class="btn btn-dark" (click)="currentCategory = i; openModal(confirmModal)">Delete</button></td>
-                  </tr>
-                </tbody>
-              </table>
-        </div>
+    <table class="table table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col" class="col-7">Name</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categories | search:search; let i=index">
+          <th>{{i+1}}</th>
+          <td>{{category.categoryName | titlecase}}</td>
+          <td><button class="btn btn-dark" (click)="editCategory(i); openModal(template)">Edit</button></td>
+          <td><button class="btn btn-dark" (click)="currentCategory = i; openModal(confirmModal)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 </div>
 
@@ -46,14 +46,14 @@
 
 
 <ng-template class="confirmModal" #confirmModal>
-    <div class="modal-body text-center bg-dark col-12">
-        <h1 class="text-warning">Are you sure?</h1>
-      <button type="button" class="btn btn-secondary mr-3" (click)="modalRef.hide()" >Dismiss</button>
-      <button type="button" class="btn btn-danger" (click)="deleteCategory(currentCategory)" >Delete</button>
-    </div>
-  </ng-template>
+  <div class="modal-body text-center bg-dark col-12">
+    <h1 class="text-warning">Are you sure?</h1>
+    <button type="button" class="btn btn-secondary mr-3" (click)="modalRef.hide()">Dismiss</button>
+    <button type="button" class="btn btn-danger" (click)="deleteCategory(currentCategory)">Delete</button>
+  </div>
+</ng-template>
 
- 
+
 <ng-template #template>
   <div class="modal-header">
     <h4 class="modal-title pull-left">Add new category</h4>
@@ -62,12 +62,16 @@
     </button>
   </div>
   <div class="modal-body">
-    <input type="text" [(ngModel)]="currentInputCategory" name="currentInputCategory" class="form-control" placeholder="">
+    <input type="text" [(ngModel)]="currentInputCategory" name="currentInputCategory" class="form-control"
+      placeholder="">
   </div>
   <div class="modal-footer">
     <h5 *ngIf="wrongCategory" class="text-danger col">You cant add this category twice!</h5>
     <button type="button" class="btn btn-secondary" (click)="modalRef.hide()">Close</button>
-    <button type="button" class="btn btn-dark" *ngIf="!editStatus" (click)="addCategory(); (!wrongCategory) ? modalRef.hide() : null" [disabled] = "!currentInputCategory">Add</button>
-    <button type="button" class="btn btn-dark" *ngIf="editStatus" (click)="saveEditCategory(currentCategory); (!wrongCategory) ? modalRef.hide() : null" [disabled] = "!currentInputCategory">Save edit</button>
+    <button type="button" class="btn btn-dark" *ngIf="!editStatus"
+      (click)="addCategory(); (!wrongCategory) ? modalRef.hide() : null" [disabled]="!currentInputCategory">Add</button>
+    <button type="button" class="btn btn-dark" *ngIf="editStatus"
+      (click)="saveEditCategory(currentCategory); (!wrongCategory) ? modalRef.hide() : null"
+      [disabled]="!currentInputCategory">Save edit</button>
   </div>
 </ng-template>
