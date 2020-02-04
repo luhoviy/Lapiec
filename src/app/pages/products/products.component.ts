@@ -22,7 +22,7 @@ export class ProductsComponent implements OnInit {
       data => {
       this.products = data.filter(elem => elem.categoryName.toLowerCase() === params['name']);
         this.isShown = false;
-        setTimeout(() => this.isShown = true, 400);
+        setTimeout(() => this.isShown = true, 1000);
         }
       )
     )

@@ -3,11 +3,13 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { CategoriesService } from 'src/app/shared/services/categories.service';
 import { ICategory } from 'src/app/shared/interfaces/category.interface';
 import { Category } from 'src/app/shared/classes/category.model';
+import { onInitAdminAnimate } from 'src/app/shared/animations/animations';
 
 @Component({
   selector: 'app-admin-category',
   templateUrl: './admin-category.component.html',
-  styleUrls: ['./admin-category.component.scss']
+  styleUrls: ['./admin-category.component.scss'],
+  animations:[onInitAdminAnimate]
 })
 export class AdminCategoryComponent implements OnInit {
   modalRef: BsModalRef;
@@ -18,11 +20,16 @@ export class AdminCategoryComponent implements OnInit {
   currentCategory: number;
   editStatus: boolean = false;
   wrongCategory: boolean = false;
+  isShown:boolean = false;
   constructor(private modalService: BsModalService, private categoryService: CategoriesService) { }
 
   ngOnInit() {
     this.getCategories()
+    setTimeout(() => this.isShown = true,300);
+
   }
+ 
+
 
   private getCategories(): void {
     this.categoryService.getJSONcategories().subscribe(

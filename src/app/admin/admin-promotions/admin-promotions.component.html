@@ -1,4 +1,4 @@
-<div class="container col">
+<div [@showItem]="isShown ? 'shown' : 'hidden'" class="container col">
     <ng-template #template>
       <div class="modal-header bg-dark">
         <h3 *ngIf="!editStatus" class="modal-title text-success pull-left">New promotion</h3>

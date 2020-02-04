@@ -3,12 +3,14 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { IPromotions } from 'src/app/shared/interfaces/promotions.interface';
 import { PromotionsService } from 'src/app/shared/services/promotions.service';
 import { Promotion } from 'src/app/shared/classes/promotion.model';
+import { onInitAdminAnimate } from 'src/app/shared/animations/animations';
 
 
 @Component({
   selector: 'app-admin-promotions',
   templateUrl: './admin-promotions.component.html',
-  styleUrls: ['./admin-promotions.component.scss']
+  styleUrls: ['./admin-promotions.component.scss'],
+  animations:[onInitAdminAnimate]
 })
 export class AdminPromotionsComponent implements OnInit {
   date: number = Date.now();
@@ -21,10 +23,13 @@ export class AdminPromotionsComponent implements OnInit {
   finishDate: Date;
   promProfit?: string;
   currentPromID: number;
+  isShown:boolean = false;
   constructor(private modalService: BsModalService, private promService: PromotionsService) { }
 
   ngOnInit() {
     this.getPromotions();
+    setTimeout(() => this.isShown = true,300);  
+
   }
   openModalWithClass(template: TemplateRef<any>) {
     if (!this.editStatus) {

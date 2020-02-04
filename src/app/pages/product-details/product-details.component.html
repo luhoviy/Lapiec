@@ -2,20 +2,20 @@
       <img [@showItem]="isShown ? 'shown' : 'hiddenLeft'" class="col-6" [src]="productDetails?.image">
       <div class="col-6 d-flex flex-column justify-content-between align-items-center">
         <div class="col">
-          <h1 [@showItem]="isShown ? 'shown' : 'hiddenTop'" class="col text-warning">{{productDetails?.name}}</h1>
+          <h1 [@showItem]="isShown ? 'shown' : 'hiddenTop'" class="col" style="color: rgb(255, 230, 0);">{{productDetails?.name}}</h1>
           <h4 [@showItem]="isShown ? 'shown' : 'hiddenRight'" class="col mt-3  text-left">{{productDetails?.description | lowercase}}</h4>
           <h4 [@showItem]="isShown ? 'shown' : 'hiddenRight'" class="col mt-5">{{productDetails?.categoryName !== 'Drinks' ? 'Вага: ' : 'Ємність: '}} {{productDetails?.weight}} {{productDetails?.categoryName !== 'Drinks' ? 'гр' : 'л'}}</h4>
           <hr>
         </div>
         <div [@showItem]="isShown ? 'shown' : 'hiddenBottom'" class="row container d-flex align-items-center justify-content-center mb-3">
             <h4 class="text-center col-2 mr-3">Count:</h4>
-            <h2 (click)="orderCount>1 ? orderCount = orderCount - 1 : null" class="text-center count_btn text-warning  col-1">-</h2>
+            <h2 (click)="orderCount>1 ? orderCount = orderCount - 1 : null" class="text-center count_btn   col-1" style="color: rgb(255, 230, 0);">-</h2>
             <h5 class="bg-white order_count  col-1 text-center text-dark p-2">{{orderCount}}</h5>
-            <h2 (click)="orderCount = orderCount + 1" class="text-center count_btn text-warning col-1">+</h2>
+            <h2 (click)="orderCount = orderCount + 1" class="text-center count_btn  col-1" style="color: rgb(255, 230, 0);">+</h2>
 
         </div>
         <div [@showItem]="isShown ? 'shown' : 'hiddenBottom'">
-          <h4 class="col">To pay: <span class="text-warning">{{productDetails?.price * orderCount | currency}}</span></h4>
+          <h4 class="col">To pay: <span class="">{{productDetails?.price * orderCount | currency}}</span></h4>
         </div>
         <button [@showItem]="isShown ? 'shown' : 'hiddenBottom'"  class="btn order_btn mt-3 btn-warning text-dark">To order</button>
       </div>

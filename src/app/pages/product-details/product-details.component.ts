@@ -31,6 +31,6 @@ export class ProductDetailsComponent implements OnInit {
     this.productService.getProductDetails(this.id).subscribe(
       data => this.productDetails = data
     )
-    setTimeout(() => this.isShown = true,100);
+    setTimeout(() => this.isShown = true,1000);
   }
 }

@@ -8,12 +8,14 @@ import { CategoriesService } from 'src/app/shared/services/categories.service';
 import { AngularFireStorageReference, AngularFireUploadTask, AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { finalize,map } from 'rxjs/operators';
+import { onInitAdminAnimate } from 'src/app/shared/animations/animations';
 
 
 @Component({
   selector: 'app-admin-products',
   templateUrl: './admin-products.component.html',
-  styleUrls: ['./admin-products.component.scss']
+  styleUrls: ['./admin-products.component.scss'],
+  animations:[onInitAdminAnimate]
 })
 export class AdminProductsComponent implements OnInit {
   productsAdmin: Array<IProduct> = [];
@@ -38,6 +40,7 @@ export class AdminProductsComponent implements OnInit {
   uploadState: Observable<string>;
   uploadProgress: Observable<number>;
   downloadURL: Observable<string>;
+  isShown:boolean = false;
 
   constructor(private afStorage:AngularFireStorage,
               private productsService: ProductsService, 
@@ -46,6 +49,7 @@ export class AdminProductsComponent implements OnInit {
   ngOnInit() {
     this.getAdminProducts();
     this.getCategories();
+    setTimeout(() => this.isShown = true,300);  
   }
 
   private getCategories(): void {

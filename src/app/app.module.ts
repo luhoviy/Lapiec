@@ -39,6 +39,8 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
 import { PromotionsComponent } from './pages/promotions/promotions.component';
 import { AdminPromotionsComponent } from './admin/admin-promotions/admin-promotions.component';
 import { PromotionDetailsComponent } from './pages/promotion-details/promotion-details.component';
+import { NgxUiLoaderModule,NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
+import { ngxUiLoaderConfig } from './preloading-config';
 
 
 
@@ -81,6 +83,8 @@ import { PromotionDetailsComponent } from './pages/promotion-details/promotion-d
     AngularFirestoreModule,
     AngularFireAuthModule, 
     AngularFireStorageModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderRouterModule.forRoot({exclude:['/admin/products','/admin/category','/admin/orders','/admin/promotions']})
   ],
   providers: [],
   bootstrap: [AppComponent]

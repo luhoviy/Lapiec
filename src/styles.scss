@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
 
-/* You can add global styles to this file, and also import other style files */
 * {
   box-sizing: border-box;
 }
 
+
+body {
+  font-family: 'Comfortaa', cursive;
+  min-height: 100vh;
+  background: linear-gradient(to right, #1f1c2c, #918f8f, #1f1c2c);
+}
+
+
 .modal-content {
   margin: 10.5vh 0 0 0 !important;
-  // padding: 0 !important;
-
 
   h1 {
     margin-bottom: 20px !important;
@@ -17,13 +22,4 @@
 
 .modal-body {
   margin-left: 0.5px;
-}
-
-body {
-  font-family: 'Comfortaa', cursive;
-  min-height: 100vh;
-  background: linear-gradient(to right, #1f1c2c, #c5c1c1, #1f1c2c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
- 
-  
-
 }

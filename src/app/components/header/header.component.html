@@ -1,38 +1,40 @@
-<nav id="nav" class="navbar navbar-expand-lg  col">
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav p-3 col">
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link text-light" [routerLink]="[ '/home']">Home</a>
+<nav id="nav" class="navbar navbar-expand-lg  col-12">
+  <div class="collapse navbar-collapse col" id="navbarNav">
+    <ul class="navbar-nav p-3 align-items-center col row">
+      <li class="nav-item text-left col-2" routerLinkActive="active">
+        <a class="nav-link text-light" [routerLink]="[ '/home']"><img src="../../../assets/images/logo-white.svg" alt=""></a>
       </li>
+      <div class="row menu col-5">
 
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link text-light" [routerLink]="['/menu','pizza']">Pizza</a>
-      </li>
-
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link text-light" [routerLink]="['/menu','drinks']">Drinks</a>
-      </li>
-
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link text-light" [routerLink]="['/menu','salad']">Salad</a>
-      </li>
-
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link text-light" [routerLink]="['/promotions']">Promotions</a>
-      </li>
-
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link text-light" [routerLink]="[ '/payment']">Payment</a>
-      </li>
-
-      <!-- <li class="nav-item " routerLinkActive="active">
-        <a class="nav-link text-light" [routerLink]="[ '/basket']">Basket</a>
-      </li> -->
-
-      <li *ngIf="adminStatus" class="nav-item col" routerLinkActive="active">
-        <a class="nav-link text-light text-right col" [routerLink]="[ '/admin']">Admin</a>
-      </li>
-
-    </ul>
-  </div>
-</nav>
+        <li class="nav-item col" routerLinkActive="active">
+          <a class="nav-link text-light" [routerLink]="['/menu','pizza']">Піца</a>
+        </li>
+        
+        <li class="nav-item col" routerLinkActive="active">
+          <a class="nav-link text-light" [routerLink]="['/menu','drinks']">Напої</a>
+        </li>
+        
+        <li class="nav-item col" routerLinkActive="active">
+          <a class="nav-link text-light" [routerLink]="['/menu','salad']">Салати</a>
+        </li>
+        
+        <li class="nav-item col" routerLinkActive="active">
+          <a class="nav-link text-light" [routerLink]="['/promotions']">Акції</a>
+        </li>
+        
+        <li class="nav-item col" routerLinkActive="active">
+          <a class="nav-link text-light" [routerLink]="[ '/payment']">Оплата</a>
+        </li>
+        
+        <!-- <li class="nav-item " routerLinkActive="active">
+          <a class="nav-link text-light" [routerLink]="[ '/basket']">Basket</a>
+        </li> -->
+        
+      </div>
+        <li *ngIf="adminStatus" class="nav-item col" routerLinkActive="active">
+          <a class="nav-link text-light text-right " [routerLink]="[ '/admin']">Admin</a>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>

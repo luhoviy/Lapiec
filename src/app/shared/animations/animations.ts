@@ -26,19 +26,19 @@ trigger('showItem', [
       transform:('translateX(100%)'),
     })),
     transition('hiddenRight => shown', [
-      animate('0.5s')
-    ]),
-    transition('hiddenBottom => shown', [
-      animate('0.5s')
-    ]),
-    transition('hiddenTop => shown', [
       animate('0.7s')
     ]),
+    transition('hiddenBottom => shown', [
+      animate('0.7s')
+    ]),
+    transition('hiddenTop => shown', [
+      animate('0.9s')
+    ]),
     transition('hiddenLeft => shown', [
-      animate('0.3s')
+      animate('0.5s')
     ]),
     transition('hidden => shown', [
-      animate('0.3s')
+      animate('0.5s')
     ]),
   ]);
 export const onInitPromotionsAnimate =
@@ -58,6 +58,19 @@ trigger('showItem', [
       animate('0.5s')
     ]),
     transition('hiddenLeft => shown', [
+      animate('0.5s')
+    ])
+  ]);
+
+export const onInitAdminAnimate =
+trigger('showItem', [
+    state('shown', style({
+      opacity: 1,
+    })),
+    state('hidden', style({
+      opacity: 0,
+    })),
+    transition('hidden => shown',[
       animate('0.5s')
     ])
   ]);

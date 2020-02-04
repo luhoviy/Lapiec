@@ -16,7 +16,7 @@ export class PaymentComponent implements OnInit {
   }
 
   ngAfterContentInit(): void {
-    setInterval(() => this.isShown = true,100)
+    setInterval(() => this.isShown = true,1000)
     
   }
 
