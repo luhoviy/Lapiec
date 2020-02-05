@@ -42,6 +42,7 @@ import { PromotionDetailsComponent } from './pages/promotion-details/promotion-d
 import { NgxUiLoaderModule,NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 import { ngxUiLoaderConfig } from './preloading-config';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { MonthPipe } from './shared/pipes/month.pipe';
 
 
 
@@ -70,7 +71,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     ProductDetailsComponent,
     PromotionsComponent,
     AdminPromotionsComponent,
-    PromotionDetailsComponent
+    PromotionDetailsComponent,
+    MonthPipe
   ],
   imports: [
     BrowserModule,
@@ -88,7 +90,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     NgxUiLoaderRouterModule.forRoot({exclude:['/admin/products','/admin/category','/admin/orders','/admin/promotions']}),
     CarouselModule.forRoot()
   ],
-  providers: [],
+  providers: [ProductDetailsComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

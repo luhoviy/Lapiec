@@ -25,7 +25,7 @@ export class PromotionsComponent implements OnInit {
   }
   
     ngAfterContentInit(): void {
-    setTimeout(() => this.isShown = true,1000);    
+    setTimeout(() => this.isShown = true,1000);   
  }
 
 }

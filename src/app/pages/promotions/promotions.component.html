@@ -1,17 +1,17 @@
-<div class="main mb-5 container col-8">
-    <div class="row d-flex justify-content-between">
-      <div [@showItem]="isShown ? 'shown' : prom.id%2 ? 'hiddenLeft' : 'hiddenRight' " *ngFor="let prom of promotions; let i=index;" id="card" class="card pt-3 pr-3 pl-3">
-        <img class="card-img-top" [routerLink]="[ '/promotions', prom.id ]" src="https://www.lapiec-pizza.com.ua/wp-content/uploads/2018/07/discount-1-2.jpg">
+<div class="main mb-3 container col-10">
+    <div class="row d-flex justify-content-around">
+      <div [@showItem]="isShown ? 'shown' : i%2 ? 'hiddenLeft' : 'hiddenRight' " *ngFor="let prom of promotions; let i=index;" id="card" class="card mb-3 pt-3 pr-3 pl-3">
+        <img class="card-img-top" [routerLink]="[ '/promotions', prom.id ]" [src]="prom.image">
         <div class="card-body">
           <h2 class="card-title text-center">{{prom.name | titlecase}}</h2>
           <div class="profit mt-2">
               <h5 class="card-text text-center"><span class="text-">{{prom.profit}}</span></h5>
             </div>
             <div class="row mt-3 finish_date">
-                <h5 class="card-text text-center col">Акція діє до <span style="color: red;">{{prom.finishDate | date:'dd MMMM  yyyy' }}</span></h5>
+                <h5 class="card-text text-center col">Акція діє до <span style="color: rgb(218, 17, 17); font-weight: 600;">{{prom.finishDate | date:'dd MM yyyy' | month}}</span></h5>
             </div>
           <div class="mt-3 row">
-            <button class="btn btn-dark col-12" [routerLink]="[ '/promotions', prom.id ]">Read more</button>
+            <button class="btn btn-dark col-12" [routerLink]="[ '/promotions', prom.id ]">Детальніше</button>
           </div>
         </div>
       </div>

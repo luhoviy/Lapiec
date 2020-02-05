@@ -6,7 +6,7 @@
 .scrolled {
   background-color: transparent;
   background-color: black;
-
+  
     img {
       width: 50%;
     }
@@ -39,7 +39,23 @@ nav {
       }
     }
   }
-
+  .basket{
+    position: relative;
+    padding-bottom: 15%;
+    p{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: rgb(255, 230, 0);
+      font-size: 14px;
+      color: black;
+      // text-align: center;
+      width: 35px;
+      height: 35px;
+      padding-top: 10px;
+      border-radius: 50%;
+    }
+  }
   a {
     font-size: 20px;
   }

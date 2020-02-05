@@ -3,8 +3,8 @@
   box-shadow: inset 0px 0px 19px #000000;
 
   .card-title {
-    font-weight: 700;
-    font-size: 35px;
+    font-weight: 500;
+    font-size: 25px;
   }
 
   img {
@@ -31,12 +31,16 @@
     justify-content: space-between;
 
     .card-text {
-      font-size: 20px;
-      font-weight: 800;
+      font-size: 18px;
+      font-weight: 500;
     }
 
     button {
       font-size: 20px;
+    }
+
+    button:hover{
+      color: rgb(255, 230, 0);
     }
 
   }

@@ -1,10 +1,13 @@
 <div [@showItem]="isShown ? 'shown' : 'hidden'" class="container col">
     <ng-template #template>
-      <div class="modal-header bg-dark">
+      <div *ngIf="!modalImage" class="modal-header bg-dark">
         <h3 *ngIf="!editStatus" class="modal-title text-success pull-left">New promotion</h3>
         <h3 *ngIf="editStatus" class="modal-title text-warning pull-left">Edit promotion</h3>
       </div>
-      <div class="modal-body col container-fluid newpromModal">
+      <div *ngIf="modalImage" class="modal-body">
+        <img class="col" [src]="currentImage" alt="">
+      </div>
+      <div *ngIf="!modalImage" class="modal-body col container-fluid newpromModal">
         <form class="">
           <div class="form-group col row">
 
@@ -18,10 +21,6 @@
             <textarea [(ngModel)]="promDescription" name="promDescription" class="form-control col-9" id="promDescription" placeholder="Promotion description"></textarea>
           </div>
           <div class="form-group col row">
-            <label class="col-3" for="promWeight">Promotion start date:</label>
-            <input type="date"  [(ngModel)]="startDate" name="startDate" class="form-control col-9" id="startDate">
-          </div>
-          <div class="form-group col row">
             <label class="col-3" for="promWeight">Promotion finish date:</label>
             <input type="date" [(ngModel)]="finishDate" name="finishDate" class="form-control col-9" id="finishDate">
           </div>
@@ -29,12 +28,45 @@
             <label class="col-3" for="promPrice">User profit:</label>
             <input type="text" [(ngModel)]="promProfit" name="promProfit" class="form-control col-9" id="promProfit" placeholder="20% Знижки">
           </div>
+
+          <div class="input-group col mx-auto container row mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Upload image</span>
+            </div>
+            <div class=" form-group custom-file col">
+              <input type="file" class="custom-file-input" id="upload_file" (change)="imageCorrect = false; upload($event);"
+                accept=".png,.jpg,.jfif" />
+              <label class="custom-file-label" id="upload_file" for="upload_file">Choose...</label>
+            </div>
+          </div>
+
+
+
+         
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped bg-dark" role="progressbar"
+              [style.width]="(uploadProgress | async) + '%'" [attr.aria-valuenow]="(uploadProgress | async)"
+              aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+
+
+          <div *ngIf="downloadURL | async; let downloadSrc;" class="alert mx-auto row" role="alert">
+            <img [src]="downloadSrc" class="col-6"  alt="">
+            <div class="col pt-5">
+              <h2 class="text-center" >Is your image correct?</h2>
+              <div class="col d-flex justify-content-around">
+              
+                <button type="button" class= "col-5 btn btn-danger" (click)="uploadProgress = null;downloadURL = '';imageCorrect = false" >Cancel</button>
+                <button type="button" class="col-5 btn btn-success" (click)="imageCorrect = true" >Continue</button>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
-      <div class="modal-footer">
+      <div *ngIf="!modalImage" class="modal-footer">
         <button type="button" class="btn btn-secondary" (click)="resetForm(); modalRef.hide(); ">Close</button>
-        <button type="button" *ngIf="!editStatus" class="btn btn-dark"  (click)="modalRef.hide();addPromotion();">Add</button>
-        <button type="button" *ngIf="editStatus" class="btn btn-dark" [disabled]="!promName || !promDescription || !startDate || !finishDate || !promProfit"  (click)="saveEditPromotion(currentPromID); modalRef.hide();">Save edit</button>
+        <button type="button" *ngIf="!editStatus" class="btn btn-dark"  [disabled]="photo && imageCorrect && promName && promDescription && promProfit && finishDate ? false : true"  (click)="modalRef.hide();addPromotion();">Add</button>
+        <button type="button" *ngIf="editStatus" class="btn btn-dark" [disabled]="imageCorrect && promName && promDescription && finishDate && promProfit ? false : true"  (click)="saveEditPromotion(currentPromID); modalRef.hide();">Save edit</button>
   
       </div>
     </ng-template>
@@ -42,7 +74,7 @@
         <div class="card">
           <div class="card-header d-flex justify-content-between">
     <h5>Promotion</h5>
-    <button type="button" class="btn btn-dark col-2"  (click)="editStatus = false; openModalWithClass(template)">Add</button>
+    <button type="button" class="btn btn-dark col-2"  (click)="modalImage = false; editStatus = false; openModalWithClass(template)">Add</button>
   </div>
   
       <div class="card-body">
@@ -52,8 +84,7 @@
             <tr>
               <th scope="col">#</th>
               <th scope="col">Name</th>
-              <th scope="col">Description</th>
-              <th scope="col">Start date</th>
+              <th scope="col">Photo</th>
               <th scope="col">Finish date</th>
               <th scope="col">Profit for user</th>
               <th scope="col">Edit</th>
@@ -64,11 +95,10 @@
             <tr  *ngFor="let prom of promotions; let i=index">
               <th>{{i+1}}</th>
               <td>{{prom.name}}</td>
-              <td>{{prom.description}}</td>
-              <td>{{prom.startDate | date:'dd MMM, yyyy'}}</td>
+              <td (click)="modalImage = true; openModalWithClass(template,prom.image)"><img [src]="prom.image" width="75px" alt=""></td>
               <td>{{prom.finishDate | date:'dd MMM, y'}}</td>
               <td>{{prom.profit}}</td>
-              <td><button class="btn btn-dark"  (click)="editPromotion(i); openModalWithClass(template);">Edit</button></td>
+              <td><button class="btn btn-dark"  (click)="modalImage = false; editPromotion(i); openModalWithClass(template);">Edit</button></td>
               <td><button class="btn btn-dark"  (click)="deletePromotion(prom.id)">Delete</button></td>
             </tr>
           </tbody>

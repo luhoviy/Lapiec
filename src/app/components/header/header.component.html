@@ -26,14 +26,17 @@
           <a class="nav-link text-light" [routerLink]="[ '/payment']">Оплата</a>
         </li>
         
-        <!-- <li class="nav-item " routerLinkActive="active">
-          <a class="nav-link text-light" [routerLink]="[ '/basket']">Basket</a>
-        </li> -->
       </div>
-      
-        <li *ngIf="adminStatus" class="nav-item col" routerLinkActive="active">
-          <a class="nav-link text-light text-right " [routerLink]="[ '/admin']">Admin</a>
+      <div class="col justify-content-end row align-items-center">
+
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link basket text-light" [routerLink]="[ '/basket']"><p [@showItem]="isShown ? 'shown' : 'totalPayment'">{{totalPayment}}</p><img style="width: 50px;" src="../../../assets/images/basket.png" alt=""></a>
         </li>
+    
+      <li *ngIf="adminStatus" class="nav-item ml-3" routerLinkActive="active">
+        <a class="nav-link text-light text-right " [routerLink]="[ '/admin']">Admin</a>
+      </li>
+      </div>
         
       </ul>
     </div>

@@ -9,6 +9,9 @@ trigger('showItem', [
       opacity: 0,
       transform:('translateY(50px)'),
     })),
+    state('totalPayment', style({
+      transform:('scale(1.5)'),
+    })),
     state('hiddenLeft', style({
       opacity: 0,
       transform:('translateX(-100%)'),
@@ -40,6 +43,9 @@ trigger('showItem', [
     transition('hidden => shown', [
       animate('0.5s')
     ]),
+    transition('totalPayment => shown', [
+      animate('0.2s')
+    ]),
   ]);
 export const onInitPromotionsAnimate =
 trigger('showItem', [
@@ -50,6 +56,18 @@ trigger('showItem', [
       opacity: 0,
       transform:('translateX(-100px)'),
     })),
+    state('hiddenTitle', style({
+      opacity: 0,
+      transform:('translateY(-100px)'),
+    })),
+    state('hiddenPhoto', style({
+      opacity: 0,
+      transform:('translateX(-150px)'),
+    })),
+    state('hiddenText', style({
+      opacity: 0,
+      transform:('translateY(150px)'),
+    })),
     state('hiddenLeft', style({
       opacity: 0,
       transform:('translate(100px)'),
@@ -59,7 +77,16 @@ trigger('showItem', [
     ]),
     transition('hiddenLeft => shown', [
       animate('0.5s')
-    ])
+    ]),
+    transition('hiddenText => shown', [
+      animate('0.5s')
+    ]),
+    transition('hiddenPhoto => shown', [
+      animate('0.7s')
+    ]),
+    transition('hiddenTitle => shown', [
+      animate('0.8s')
+    ]),
   ]);
 
 export const onInitAdminAnimate =
@@ -74,6 +101,7 @@ trigger('showItem', [
       animate('0.5s')
     ])
   ]);
+
 
 
 export const onInitHomeAnimations =
