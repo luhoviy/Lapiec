@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
   categories:Array<ICategory>;
   adminStatus:boolean = true;
   totalPayment:number = 0;
-  isShown:boolean = false;
+  isShown:boolean = true;
   
 
 
@@ -33,9 +33,11 @@ export class HeaderComponent implements OnInit {
       data => this.categories = data
     )
     this.total.currentPayment.subscribe(paymnet => {
-      this.totalPayment = this.totalPayment + paymnet
-      this.isShown = false;
-      setTimeout(() => this.isShown = true,50)
+      this.totalPayment = this.totalPayment + paymnet;
+      if(this.totalPayment !=0){
+        this.isShown = false;
+        setTimeout(() => this.isShown = true,50)
+      }
     });
   }
   
