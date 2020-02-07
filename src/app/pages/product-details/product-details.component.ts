@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { IProduct } from 'src/app/shared/interfaces/product.interface';
 import { BsDropdownConfig } from 'ngx-bootstrap/dropdown';
 import { onInitProcutsAnimate } from 'src/app/shared/animations/animations';
-import { TotalPriceService } from 'src/app/shared/services/total-price.service';
+import { OrdersService } from 'src/app/shared/services/orders.service';
 
 
 @Component({
@@ -23,9 +23,10 @@ export class ProductDetailsComponent implements OnInit {
   count:number = 1;
   
 
-  constructor(private productService:ProductsService,private rout:ActivatedRoute,private total:TotalPriceService) { }
+  constructor(private productService:ProductsService,private rout:ActivatedRoute,private total:OrdersService) { }
   ngOnInit() {
     this.getProductDetails();
+    
   }
 
 
@@ -39,14 +40,37 @@ export class ProductDetailsComponent implements OnInit {
 
   getProductDetails():void{
     this.id = +this.rout.snapshot.paramMap.get('id');
+    
+
     this.productService.getProductDetails(this.id).subscribe(
       data => this.productDetails = data
     )
     setTimeout(() => this.isShown = true,1000);
   }
 
-  addOrder(currentPrice:number):void{
-      this.total.changeTotalPayment(currentPrice);
+  addOrder(currentPrice:number,name:string,imgUrl:string,id:number,categoryName:string):void{
+      if(localStorage.getItem('orders') && localStorage.getItem('orders').indexOf(`${name}`) == -1){
+
+        localStorage.setItem('orders',`${localStorage.getItem('orders') + `,${name}`}`)
+      }
+      if(!localStorage.getItem('orders')){
+         localStorage.setItem('orders',`${name}`)
+      } 
+      
+      localStorage.setItem(`${name}Img`,`${imgUrl}`);
+      localStorage.setItem(`${name}ID`,`${id}`);
+      localStorage.setItem(`${name}categoryName`,`${categoryName}`);
+
+      localStorage.getItem(`${name}TotalPrice`) 
+             ? localStorage.setItem(`${name}TotalPrice`,`${+localStorage.getItem( `${name}TotalPrice`) + currentPrice}`)
+             : localStorage.setItem(`${name}TotalPrice`,`${currentPrice}`);
+
+      localStorage.getItem(`${name}Count`) 
+             ? localStorage.setItem(`${name}Count`,`${+localStorage.getItem( `${name}Count`) + this.count}`)
+             : localStorage.setItem(`${name}Count`,`${this.count}`);
+         
+      localStorage.setItem('totalPrice',`${+localStorage.getItem('totalPrice') + currentPrice}`);       
       this.count = 1;
+     this.total.refreshLocalStorage()
   }
 }

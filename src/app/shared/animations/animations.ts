@@ -102,6 +102,43 @@ trigger('showItem', [
     ])
   ]);
 
+export const onInitBasketAnimate =
+trigger('showItem', [
+    state('shown', style({
+      opacity: 1,
+    })),
+    state('hidden', style({
+      opacity: 0,
+    })),
+    state('emptyBasket', style({
+      opacity: 0,
+    })),
+    state('orderCompleted', style({
+      opacity: 0,
+    })),
+    state('callback', style({
+      opacity: 0,
+    })),
+    transition('shown => orderCompleted',[
+      animate('0.7s')
+    ]),
+    transition('shown => callback',[
+      animate('0.7s')
+    ]),
+    transition('callback => shown',[
+      animate('0.7s')
+    ]),
+    transition('orderCompleted => shown',[
+      animate('0.7s')
+    ]),
+    transition('hidden => shown',[
+      animate('0.7s')
+    ]),
+    transition('emptyBasket => shown',[
+      animate('0.7s')
+    ])
+  ]);
+
 
 
 export const onInitHomeAnimations =

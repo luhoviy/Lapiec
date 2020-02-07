@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriesService } from 'src/app/shared/services/categories.service';
 import { ICategory } from 'src/app/shared/interfaces/category.interface';
-import { TotalPriceService } from 'src/app/shared/services/total-price.service';
 import { onInitProcutsAnimate } from 'src/app/shared/animations/animations';
+import { OrdersService } from 'src/app/shared/services/orders.service';
 
 
 
 window.onscroll = () => {
-  window.pageYOffset >= 100 
-  ? document.body.children[0].children[0].children[0].classList.add('scrolled')
-  : document.body.children[0].children[0].children[0].classList.remove('scrolled')  
+  window.pageYOffset >= 100
+    ? document.body.children[0].children[0].children[0].classList.add('scrolled')
+    : document.body.children[0].children[0].children[0].classList.remove('scrolled')
 };
 
 
@@ -17,28 +17,29 @@ window.onscroll = () => {
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  animations:[onInitProcutsAnimate]
+  animations: [onInitProcutsAnimate]
 })
 export class HeaderComponent implements OnInit {
-  categories:Array<ICategory>;
-  adminStatus:boolean = true;
-  totalPayment:number = 0;
-  isShown:boolean = true;
-  
+  categories: Array<ICategory>;
+  adminStatus: boolean = true;
+  totalPayment?: string;
+  isShown: boolean = true;
 
 
-  constructor(private categyService:CategoriesService, private total:TotalPriceService) { }
+
+  constructor(private categyService: CategoriesService, private total: OrdersService) { }
   ngOnInit() {
     this.categyService.getJSONcategories().subscribe(
       data => this.categories = data
     )
-    this.total.currentPayment.subscribe(paymnet => {
-      this.totalPayment = this.totalPayment + paymnet;
-      if(this.totalPayment !=0){
-        this.isShown = false;
-        setTimeout(() => this.isShown = true,50)
+    this.total.localStorageObserver.subscribe(
+      data => {
+         (+localStorage.getItem('totalPrice') > 0)
+          ? this.totalPayment = localStorage.getItem('totalPrice')
+          : this.totalPayment = '0'
+          this.isShown = false;
+          setTimeout(() => this.isShown = true,50)
       }
-    });
+    )
   }
-  
 }

@@ -1,3 +1,4 @@
+
 <div [@showItem]="isShown ? 'shown' : 'hidden'"
   class=" card-block card d-flex flex-column align-items-center container-fluid col-12">
   <div class="card-header col-12">
@@ -7,7 +8,7 @@
     </div>
   </div>
   <div class="col-12 card-body">
-    <input type="text" [(ngModel)]="search" name="search" class="form-control" placeholder="Filter category...">
+    <input type="text"  [(ngModel)]="search" name="search" class="form-control" placeholder="Filter category...">
     <hr>
 
     <table class="table table-bordered">
@@ -37,14 +38,6 @@
 
 
 
-
-
-
-
-
-
-
-
 <ng-template class="confirmModal" #confirmModal>
   <div class="modal-body text-center bg-dark col-12">
     <h1 class="text-warning">Are you sure?</h1>
@@ -62,16 +55,15 @@
     </button>
   </div>
   <div class="modal-body">
-    <input type="text" [(ngModel)]="currentInputCategory" name="currentInputCategory" class="form-control"
-      placeholder="">
+    <input type="text" placeholder="No more than 20 letters..." [ngClass]="{'wrongInput': category.invalid && category.dirty}" [(ngModel)]="currentInputCategory" pattern="[a-zA-Z][^\s/0-9\W]{2,20}"  #category = "ngModel" required name="currentInputCategory" class="form-control">
   </div>
   <div class="modal-footer">
     <h5 *ngIf="wrongCategory" class="text-danger col">You cant add this category twice!</h5>
     <button type="button" class="btn btn-secondary" (click)="modalRef.hide()">Close</button>
     <button type="button" class="btn btn-dark" *ngIf="!editStatus"
-      (click)="addCategory(); (!wrongCategory) ? modalRef.hide() : null" [disabled]="!currentInputCategory">Add</button>
+      (click)="addCategory(); (!wrongCategory) ? modalRef.hide() : null" [disabled]="category.invalid">Add</button>
     <button type="button" class="btn btn-dark" *ngIf="editStatus"
       (click)="saveEditCategory(currentCategory); (!wrongCategory) ? modalRef.hide() : null"
-      [disabled]="!currentInputCategory">Save edit</button>
+      [disabled]="category.invalid">Save edit</button>
   </div>
 </ng-template>

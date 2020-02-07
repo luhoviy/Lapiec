@@ -2,7 +2,9 @@ table{
     text-align: center;
 }
 .card{
-
+    img:hover{
+        cursor: zoom-in;
+    }
     .card-header{
         align-items: center;
         padding: 2% 5%;

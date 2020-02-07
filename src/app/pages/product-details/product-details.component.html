@@ -15,10 +15,10 @@
             <button class="col-2 " (click)="count = count +1">+</button>
           </div>
           <div class="mx-auto mt-3 col" [@showItem]="isShown ? 'shown' : 'hiddenBottom'">
-            <h4 class="col mx-auto text-center">To pay: <span style="color: rgb(255, 230, 0);" class="">{{count >= 1 ? productDetails?.price * count  :  productDetails?.price}} UAH </span></h4>
+            <h4 class="col mx-auto text-center">До оплати: <span style="color: rgb(255, 230, 0);" class="">{{count >= 1 ? productDetails?.price * count  :  productDetails?.price}} UAH </span></h4>
           </div>
           <div class="row">
-            <button [@showItem]="isShown ? 'shown' : 'hiddenBottom'" (click)="addOrder(count * productDetails.price)"  class="btn col-7 order_btn mx-auto mt-3 btn-dark text-white">Замовити</button>
+            <button [@showItem]="isShown ? 'shown' : 'hiddenBottom'" (click)="addOrder(count * productDetails.price,productDetails.name,productDetails.image,productDetails.id,productDetails.categoryName)"  class="btn col-7 order_btn mx-auto mt-3 btn-dark text-white">Додати до замовлення</button>
           </div>
         </div>
         

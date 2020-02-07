@@ -71,13 +71,12 @@
     },
     {
       "id": 8,
-      "categoryID": 2,
       "categoryName": "Drinks",
       "name": "Coca Cola",
       "description": "Добре смакує з піцою.",
       "weight": 1,
       "price": 33,
-      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2Fe9d94e17-1457-4335-9af9-9bb57bd01381.jpeg?alt=media&token=e96436b2-d63b-4f50-a23c-1e01b30a2afe"
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2F8229ec2c-e3f5-4011-b381-5ac505d98631.jpeg?alt=media&token=28303106-f541-4d12-92f8-6ff654287f2b"
     },
     {
       "id": 9,
@@ -145,6 +144,28 @@
       "finishDate": "2021-06-01",
       "profit": "Доставимо вчасно або піца безкоштовно",
       "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2Fc0ad6842-5285-4f55-9cb4-cdb7f5e29620.jpeg?alt=media&token=6f463a8a-4d08-4e38-a51d-0a1d1a3cff5a"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userName": "Vasya",
+      "userPhone": "0999999999",
+      "userCity": "Lviv",
+      "userStreet": "Pupkina",
+      "userHouse": "2",
+      "ordersDetails": [
+        {
+          "name": "Кальцоне аль Форно",
+          "img": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2F48711a09-8032-407d-9bc6-329b3163b729.jpeg?alt=media&token=a372abe7-1792-4a61-a3f9-4fb392730c74",
+          "price": 133,
+          "count": "53",
+          "totalPrice": "7049",
+          "id": "4",
+          "categoryName": "Pizza"
+        }
+      ],
+      "totalPayment": "7049"
     }
   ]
 }

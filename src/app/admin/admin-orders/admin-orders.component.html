@@ -1,1 +1,32 @@
-<div [@showItem]="isShown ? 'shown' : 'hidden'"></div>
+<div class="col" [@showItem]="isShown ? 'shown' : 'hidden'">
+    <table class="table table-dark table-bordered">
+        <thead class="thead-dark">
+          <tr class="text-center">
+            <th>№</th>
+            <th style="width: 30% !important;" >User Orders</th>
+            <th >User info</th>
+            <th >Total payment</th>
+            <th style="width: 150px !important;" >User comment</th>
+            <th >Done</th>
+            <th >Delete </th>
+          </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let orderInfo of orderList">
+                <th class="text-white text-center">{{orderInfo.id}}</th>
+                <th>
+                    <p class="col" *ngFor="let item of orderInfo.ordersDetails">{{item.name}} ({{item.count}} шт), {{item.totalPrice}} UAH</p>
+                </th>
+                <th class="text-center">
+                    <p class="col">{{orderInfo.userName}}</p>
+                    <p class="col">{{orderInfo.userPhone}}</p>
+                    <p class="col">{{orderInfo.userStreet}} {{orderInfo.userHouse}}, {{orderInfo.userCity}}</p>
+                </th>
+                <th class="text-center">{{orderInfo.totalPayment}} UAH</th>
+                <th ><h6 class="col">{{orderInfo.userComment}}</h6></th>
+                <th class="text-center"><input type="checkbox"  name="" id=""></th>
+                <th class="text-center"><button class="btn btn-danger" (click)="deleteOrder(orderInfo.id)" >Delete</button></th>
+            </tr>
+        </tbody>
+      </table>
+</div>

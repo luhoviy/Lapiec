@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { NgxMaskModule } from 'ngx-mask'
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -88,7 +89,9 @@ import { MonthPipe } from './shared/pipes/month.pipe';
     AngularFireStorageModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderRouterModule.forRoot({exclude:['/admin/products','/admin/category','/admin/orders','/admin/promotions']}),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [ProductDetailsComponent],
   bootstrap: [AppComponent]

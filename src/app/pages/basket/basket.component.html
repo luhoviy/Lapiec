@@ -1,0 +1,101 @@
+<div *ngIf="!hasOrders" class="emptyBasket col-10 align-items-center mx-auto" [@showItem]="showEmptyBasket ? 'emptyBasket' : 'shown'">
+        <h1  class="col text-center">Кошик порожній</h1>
+        <button [routerLink]="['/menu','pizza']" class="col-2 mx-auto btn btn-dark" (mouseover) = "funnyCat = true" (mouseout) = "funnyCat = false">Замовити піцу</button>
+        <img [ngClass]="{'cat_hover': !funnyCat}" class="left_cat"   src="../../../assets/images/cat_hover.png" alt="">
+    <img #kitiket class="cat" src="../../../assets/images/cat.png" alt=""> 
+</div>
+<h1 [@showItem]="isShown ? 'shown' : 'hidden'" *ngIf="hasOrders" class="col text-light text-center">Оформити замовлення</h1>
+<div [@showItem]="isShown ? 'shown' : 'hidden'" *ngIf="hasOrders" class="orders mt-5 mx-auto bg-white col-10">
+
+  <table class="table col">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col" class="text-left pl-4" style="width: 50%;">Товар</th>
+        <th scope="col">Ціна</th>
+        <th scope="col">Кількість</th>
+        <th scope="col">Загалом</th>
+      </tr>
+    <tbody class="mt-3">
+      <tr class="align-items-center" *ngFor="let order of orderList">
+        <th (click)="openModal(confirmModal,order.name,order.totalPrice,order)" class="delete p-0 pr-1">&#10006;</th>
+        <td scope="row" class="text-left"><img class="mr-3" [routerLink]="['/menu', order.categoryName | lowercase, order.id]" [src]="order.img" width="100px" alt="">{{order.name}}</td>
+        <td>{{order.price}}</td>
+        <td>
+            <div class="orderCount">
+                <button (click)="decreaseCount(order.name,order.count,order.price)" class="col-2">-</button>
+                <input [value] = "order.count"  type="number">
+                <button (click)="increaseCount(order.name,order.count,order.price)" class="col-2">&#43;</button>
+              </div>
+        </td>
+        <td>{{order.totalPrice}} UAH</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="text-right"></td>
+          <td class="text-left pt-4 pb-4">До оплати: <span style="font-size: 25px;" style="color: rgb(226, 10, 10); font-weight: 700;">{{totalPaymnet}} UAH</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="delivaryDetails col mt-5 mx-auto">
+      <h2 class="col  text-center">Вкажіть деталі доставки</h2>
+        <form action="" class="form-group mt-5 col-7 mx-auto">
+            <div class="form-group">
+                <label for="fName">Ваше імя*</label>
+                <input type="text" required [(ngModel)]="fName" pattern="[a-zA-Z][^\s/0-9\W]{2,20}" name="fName" #fNameText ="ngModel" class="form-control" id="fName" placeholder="Your first name">
+              </div>
+            <div class="form-group">
+                <label for="phone">Телефон*</label>
+                <input type="text" required [(ngModel)]="phone" name="phone" #phoneText ="ngModel"  prefix="+380" id="phone"  mask="(00) 00 00 000" class="form-control" [showMaskTyped]="true"/>
+            </div>
+            <div class=" p-0 row">
+
+            <div class="form-group col">
+                <label class="text-left pl-0 col"  for="phone">Місто*</label>
+                <input type="text" required [(ngModel)]="city" pattern="[a-zA-Z][^\s/0-9\W]{2,20}" name="city" #cityText ="ngModel"  class="form-control" id="city" placeholder="City">
+
+            </div>
+            <div class="form-group col">
+                <label class="text-left pl-0 col"  for="phone">Вулиця*</label>
+                <input type="text" required [(ngModel)]="street" pattern="[a-zA-Z][^\s/0-9\W]{2,20}" name="street" #streetText ="ngModel"  class="form-control" id="street" placeholder="Street">
+
+            </div>
+            <div class="form-group col">
+                <label class="text-left pl-0 col"  for="house">Будинок*</label>
+                <input type="text" required [(ngModel)]="house" pattern="[0-9]{1,4}" name="house" #houseText ="ngModel"  maxlength="4" class="form-control" id="house" placeholder="House number">
+
+            </div>
+        </div>
+
+            <div class="form-group">
+                <label for="comment">Додаткова інформація</label>
+               <textarea class="col pt-2" [(ngModel)]="comment" placeholder="Ваш коментар" name="comment" id="comment" maxlength="150"></textarea>
+            </div>
+
+        <button (click)="openModal(confirmOrderModal)" [disabled]="houseText.valid && streetText.valid && cityText.valid && phoneText.valid && fNameText.valid ? false : true" class="btn btn-dark col">Оформити замовлення</button>
+        </form>     
+  </div>
+</div>
+
+
+<div *ngIf="!hasOrders" class="orderCompleted">
+  <h1 [@showItem]="!orderCompleted ? 'orderCompleted' : 'shown'">Ваше замовлення було успішно опрацьовано!</h1>
+  <h2 [@showItem]="!callBack ? 'callback' : 'shown'">Очікуйте дзвінка!</h2 >
+</div>
+
+
+<ng-template  class="confirmModal" #confirmOrderModal>
+    <div style="width: 500px; padding-top: 10%; height: 200px;" class="modal-body text-center col-12">
+      <h5 class=" mb-3">Ви підтверджуєте замовлення на суму {{totalPaymnet}} грн?</h5>
+      <button type="button" class="btn btn-dark mr-3" (click)="modalRef.hide()">Назад</button>
+      <button type="button" class="btn btn-success" (click)="pushOrder(); modalRef.hide()">Так</button>
+    </div>
+  </ng-template>
+<ng-template  class="confirmModal pt-5" #confirmModal>
+    <div style="width: 500px; vertical-align: middle; padding-top: 10%; height: 200px;" class="modal-body text-center col-12">
+      <h1 class="">Ви впевнені,що хочете видалити це замовлення?</h1>
+      <button type="button" class="btn btn-success mr-3" (click)="modalRef.hide()">Назад</button>
+      <button type="button" class="btn btn-dark" (click)="deleteOrder(currentOrderName,currentOrderPrice,currentOrder); modalRef.hide()">Так</button>
+    </div>
+  </ng-template>

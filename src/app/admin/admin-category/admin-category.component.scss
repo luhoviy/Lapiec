@@ -2,6 +2,8 @@
   border-radius: 5px;
   padding: 0;
 
+  
+
   .card-header {
     padding: 2% 0;
     span {
@@ -19,3 +21,12 @@
 h5 {
   text-align: start;
 }
+
+
+.form-control:focus{
+  box-shadow: none;
+  border-width: 1.5px;
+}
+.wrongInput:focus{
+  border: 1.5px solid rgb(199, 15, 15);
+  }
