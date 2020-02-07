@@ -1,7 +1,14 @@
 .main {
+  .content{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    grid-gap: 30px;
+    justify-content: center;
+  }
   .card {
-    width: 31.5%;
+    // width: 31.5%;
     box-shadow: inset 0px 0px 29px #000000;
+    
 
     img {
       transition: 0.5s;

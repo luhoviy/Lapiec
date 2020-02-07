@@ -96,6 +96,86 @@
       "weight": 0.5,
       "price": 20,
       "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2Fea992b61-91d9-478b-a0fe-c70cf4c6a763.jpeg?alt=media&token=a75036c2-75ac-47e3-922d-dde5ed952c27"
+    },
+    {
+      "id": 11,
+      "categoryID": 1,
+      "categoryName": "Pizza",
+      "name": "Цезаріо",
+      "description": "соус вершковий, помідори, хрусткий салат, пармезан, куряче м'ясо, сир моцарела, перепелині яйця.",
+      "weight": 600,
+      "price": 182,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2F10700c0d-2844-4188-a2b2-14e12f60ad08.jpeg?alt=media&token=ede35e66-01bc-4de6-a61a-1d21b79ab8fe"
+    },
+    {
+      "id": 12,
+      "categoryID": 1,
+      "categoryName": "Pizza",
+      "name": "Салямі",
+      "description": "соус томатний, сир моцарела, ковбаса салямі\n\n",
+      "weight": 410,
+      "price": 131,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2Fbd492ff0-28cc-4356-afc4-3d0fff41cf1f.jpeg?alt=media&token=502e03e2-9894-4be7-b671-e6ae838d3282"
+    },
+    {
+      "id": 13,
+      "categoryID": 1,
+      "categoryName": "Pizza",
+      "name": "Маргарита",
+      "description": "соус томатний, сир моцарела, помідори.\n\n",
+      "weight": 420,
+      "price": 99,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2F87a97a66-64bb-4a03-89f7-fee5d7746649.jpeg?alt=media&token=331a9839-1fa3-40b5-afeb-4b58fdb66c8e"
+    },
+    {
+      "id": 14,
+      "categoryID": 2,
+      "categoryName": "Drinks",
+      "name": "Сік екзотик",
+      "description": "ТМ “RICH”",
+      "weight": 1,
+      "price": 42,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2F9fcdd670-31f8-4870-b42b-492d84b34f4e.jpeg?alt=media&token=2aac551d-e511-4fad-8db7-a7df56a7ed9d"
+    },
+    {
+      "id": 15,
+      "categoryID": 2,
+      "categoryName": "Drinks",
+      "name": "Сік яблучний ",
+      "description": "ТМ “RICH”",
+      "weight": 1,
+      "price": 42,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2Fbecb7812-a386-4649-b693-2ecd05eba85a.jpeg?alt=media&token=5db15daa-17dd-4f6d-8085-884b2e7e3cee"
+    },
+    {
+      "id": 16,
+      "categoryID": 3,
+      "categoryName": "Salad",
+      "name": "Інсалата ді Прошуто",
+      "description": "Салат айcберг, прошуто, сир пармезан, помідори, рукола та бальзамічна заправка. \n\n",
+      "weight": 135,
+      "price": 115,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2Fd4f91aca-4d32-4468-9117-1abf10b9a38c.jpeg?alt=media&token=44f7c570-ae40-4ae1-a885-41ad53551c6f"
+    },
+    {
+      "id": 17,
+      "categoryID": 3,
+      "categoryName": "Salad",
+      "name": "Інсалата ді Тоно",
+      "description": "оливки, огірок, помідор чері, салат айсберг, оливкова олія, фреш лимонний, тунець, перепелине яйце, цибуля синя, кунжут. \n\n",
+      "weight": 280,
+      "price": 127,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2F00fe9815-01e5-45a3-9e25-663230e18fc7.jpeg?alt=media&token=1a03e0f7-e438-487e-a459-54017807018c"
+    },
+    {
+      "id": 18,
+      "categoryID": 3,
+      "categoryName": "Salad",
+      "name": "Інсалата ді Сальмоне",
+      "description": "рукола, помідор чері, огірок, салат айсберг, соус айолі, пармезан, лосось, перепелине яйце, кунжут. \n\n",
+      "weight": 285,
+      "price": 134,
+      "image": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2F07b4f4b5-7552-4de9-8516-9214e38af4b5.jpeg?alt=media&token=54ac6267-fed8-457c-ab59-45990a2d36df"
     }
   ],
   "categories": [
@@ -156,16 +236,16 @@
       "userHouse": "2",
       "ordersDetails": [
         {
-          "name": "Кальцоне аль Форно",
-          "img": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2F48711a09-8032-407d-9bc6-329b3163b729.jpeg?alt=media&token=a372abe7-1792-4a61-a3f9-4fb392730c74",
-          "price": 133,
-          "count": "53",
-          "totalPrice": "7049",
-          "id": "4",
-          "categoryName": "Pizza"
+          "name": "Салат Цезар",
+          "img": "https://firebasestorage.googleapis.com/v0/b/pizzeria-893db.appspot.com/o/images%2F1d3af593-f713-4545-ad50-8b18b282ee1b.jpeg?alt=media&token=da2a4fca-b926-4ce0-86a2-2c455225a48c",
+          "price": 125,
+          "count": "6",
+          "totalPrice": "750",
+          "id": "5",
+          "categoryName": "Salad"
         }
       ],
-      "totalPayment": "7049"
+      "totalPayment": "750"
     }
   ]
 }

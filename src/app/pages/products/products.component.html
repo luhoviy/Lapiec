@@ -1,7 +1,7 @@
-<div class="main pb-5 col">
+<div class="main pb-5 ">
   
-  <div class="container col-11">
-    <div class="row justify-content-between">
+  <div class="col-10 mx-auto">
+    <div class="content">
       <div  [@showItem]="isShown ? 'shown' : 'hidden'" *ngFor="let product of products; let index = index;" id="card" class="card mb-4 p-3">
         <img class="card-img-top" [routerLink]="['/menu', product.categoryName | lowercase, product.id]" [src]="product.image">
         <div class="card-body">
